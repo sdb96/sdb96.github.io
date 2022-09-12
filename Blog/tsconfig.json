@@ -1,0 +1,22 @@
+{
+  "include": [
+    "src/**/*.ts"                                     // 컴파일할 파일 경로를 설정
+  ],
+  "exclude": [                                        // 컴파일 대상을 제외하는 옵션 
+    "node_modules"   
+  ],
+  "compilerOptions": {
+    
+    "target": "esnext",                                 // 컴파일 될 javascript 버전(esnext는 신버전)
+    "removeComments" : true,
+    "module": "ES2015",                               // import 문법 결정(commonjs 는 require 문법)
+    "sourceMap" : true,                                 // .map 파일 생성여부
+    "strict": true,                                     // 엄격 타입 검사
+    "noImplicitAny": true,                              // 타입지정 필수
+    "strictNullChecks": true,                           //  null, undefined 의 잘못된 조작 방지
+    
+    "rootDir": "src",                                   // 컴파일 할 root 폴더 경로                                   
+    "outDir": "./build",                          // 컴파일 된 js 파일 생성 경로
+  }
+  
+}
