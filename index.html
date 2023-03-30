@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         <meta name="viewPort" content="width=device-width, initial-scale=1.0">
         
-        
         <!-- Font -->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,100&display=swap" rel="stylesheet">
@@ -13,9 +12,15 @@
         <!-- Icon -->
         <script src="https://kit.fontawesome.com/381da4a3b2.js" crossorigin="anonymous"></script>
         
+        <!-- js  defer??? module??-->
+        <script src="/src/js/utils/http.js"></script>
+        <script src="/src/js/utils/dom.js"></script>
+        <script src="/src/js/component/common/MainComp.js"></script>
+        <script src="/src/js/factory/MenuFactory.js"></script>
+
         <link rel="stylesheet" href="/src/css/style.css">
         
-        <title>Nav bar</title>
+        <title>sdb96</title>
     </head>
 
     <body>
@@ -26,9 +31,9 @@
             </div>
             
             <ul class="nav-bar__menu">
-                <li><a href="">Home</a></li>
-                <li><a href="">Gallery</a></li>
-                <li><a href="">Weddings</a></li>
+                <li><a href="">개발</a></li>
+                <li><a href="">일기</a></li>
+                <li><a href="">목표관리</a></li>
                 <li><a href="">FAQ</a></li>
                 <li><a href="">Bookings</a></li>
             </ul>
@@ -41,7 +46,7 @@
             </a>
         </nav>
             
-            <script>
+            <!-- <script>
                 const menuToggleBtn = document.querySelector(".nav-bar__toggle-btn");
                 const menuEl = document.querySelector(".nav-bar__menu");
                 const iconsEl = document.querySelector(".nav-bar__icons");
@@ -50,6 +55,11 @@
                     menuEl.classList.toggle("active");
                     iconsEl.classList.toggle("active");
                 });
+            </script> -->
+            
+            <script>
+                const MENU = MenuFactory.getMenu(MenuFactory.TYPE.MAIN);
+                console.log(MENU)
             </script>
     </body>
 
