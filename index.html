@@ -13,54 +13,35 @@
         <script src="https://kit.fontawesome.com/381da4a3b2.js" crossorigin="anonymous"></script>
         
         <!-- js  defer??? module??-->
+        <script src="/src/js/config/config.js"></script>
+        <!-- Utils -->
+        <script src="/src/js/utils/validate.js"></script>
         <script src="/src/js/utils/http.js"></script>
         <script src="/src/js/utils/dom.js"></script>
-        <script src="/src/js/component/common/MainComp.js"></script>
+        <!-- Components -->
+        <script src="/src/js/component/common/HeaderComp.js"></script>
+        <script src="/src/js/component/common/FooterComp.js"></script>
+        <script src="/src/js/component/common/DefaultComp.js"></script>
+        <!-- Menus -->
+        <script src="/src/js/menu/MainMenu.js"></script>
+        <script src="/src/js/menu/DevelopmentMenu.js"></script>
+        <script src="/src/js/menu/DailyMenu.js"></script>
+        <script src="/src/js/menu/ScheduleMenu.js"></script>
+        <!-- Factory -->
         <script src="/src/js/factory/MenuFactory.js"></script>
-
+        <!-- css -->
         <link rel="stylesheet" href="/src/css/style.css">
         
         <title>sdb96</title>
     </head>
 
     <body>
-        <nav class="nav-bar">
-            <div class="nav-bar__logo">
-                <i class="fa-brands fa-accusoft"></i>
-                <a href="">DreamCoding</a>
-            </div>
-            
-            <ul class="nav-bar__menu">
-                <li><a href="">개발</a></li>
-                <li><a href="">일기</a></li>
-                <li><a href="">목표관리</a></li>
-                <li><a href="">FAQ</a></li>
-                <li><a href="">Bookings</a></li>
-            </ul>
-            
-            <ul class="nav-bar__icons">
-                <li><i class="i-instagram"></i></li>
-            </ul>
-            <a href="#" class="nav-bar__toggle-btn">
-                <i class="i-menu"></i>
-            </a>
-        </nav>
-            
-            <!-- <script>
-                const menuToggleBtn = document.querySelector(".nav-bar__toggle-btn");
-                const menuEl = document.querySelector(".nav-bar__menu");
-                const iconsEl = document.querySelector(".nav-bar__icons");
-
-                menuToggleBtn.addEventListener('click',()=>{
-                    menuEl.classList.toggle("active");
-                    iconsEl.classList.toggle("active");
-                });
-            </script> -->
-            
-            <script>
-                const MENU = MenuFactory.getMenu(MenuFactory.TYPE.MAIN);
-                console.log(MENU)
-            </script>
+        <script>
+            const defComp = new DefaultComp();
+            defComp.init();
+            const MENU = MenuFactory.getMenu(MenuFactory.TYPE.Main);
+            MENU.init();
+        </script>
     </body>
 
 </html>

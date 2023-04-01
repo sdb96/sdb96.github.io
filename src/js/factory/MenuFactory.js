@@ -4,21 +4,26 @@ class MenuFactory{
     
     //변경 불가능한 타입으로 지정
     static TYPE = Object.freeze({
-        MAIN : "main",
+        Main : "main",
+        Daily:"daily",
+        Development : "development",
+        Schedule:"schedule",
     });
-    static MENU;
-    //TYPE에 일치하는 메뉴 return
-    static async getMenu(type){
-        const prefix = "/src/html/";
-        let url;
-        if(this.TYPE.MAIN === type){
-            // TODO >> UI 컴포넌트에서 결정
-            url = prefix + "common/header.html";
-            this.MENU = MainComp;
-        }
 
-        const menuNodeList = await getFragHtml(url);
-        return new this.MENU();
+    //TYPE에 일치하는 메뉴 return
+    static getMenu(type){
+        const types = this.TYPE;
+        if(types.Main === type){this.MENU = new MainMenu();}
+        if(types.Development === type){this.MENU = new DevelopmentMenu();}
+        if(types.Schedule === type){this.MENU = new ScheduleMenu();}
+        if(types.Daily === type){this.MENU = new DailyMenu();}
+        return this.MENU;
+    }
+
+    static async changeMenu(type){
+        const menu = this.getMenu(type);
+        console.log(type)
+        await menu.init();
     }
 
 }

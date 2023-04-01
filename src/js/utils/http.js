@@ -8,5 +8,5 @@ async function getFragHtml(url){
         }
     });
     
-    return createNodeList(fragHtml);
+    return createNode(fragHtml);
 }
