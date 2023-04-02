@@ -1,6 +1,6 @@
 
 class MenuFactory{
-    constructor(){};
+    constructor(){}
     
     //메뉴영역 nav node > 메뉴의 parent node
     static menuNavEl = document.querySelector("#menu-nav");
@@ -23,7 +23,7 @@ class MenuFactory{
         return this.MENU;
     }
 
-    static async changeMenu(type){
+    static async changeMenu(type){ 
         const menu = this.getMenu(type);
 
         //히스토리에 메뉴 초기화 함수 기록

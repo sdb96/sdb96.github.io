@@ -1,9 +1,5 @@
 class History{
-    constructor(){
-        window.onpopstate = function(event) {
-            alert(`location: ${document.location}, state: ${JSON.stringify(event.state)}`)
-        }
-    }
+    constructor(){}
 
     //총 히스토리 수
     static HISTORY_CNT=0;
