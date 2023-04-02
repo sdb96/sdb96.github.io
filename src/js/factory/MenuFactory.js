@@ -2,6 +2,9 @@
 class MenuFactory{
     constructor(){};
     
+    //메뉴영역 nav node > 메뉴의 parent node
+    static menuNavEl = document.querySelector("#menu-nav");
+    
     //변경 불가능한 타입으로 지정
     static TYPE = Object.freeze({
         Main : "main",
@@ -22,6 +25,12 @@ class MenuFactory{
 
     static async changeMenu(type){
         const menu = this.getMenu(type);
+
+        //히스토리에 메뉴 초기화 함수 기록
+        History.addHistory(menu.init);
+
+        this.menuNavEl.innerHTML ='';
+
         console.log(type)
         await menu.init();
     }

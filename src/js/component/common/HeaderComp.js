@@ -1,14 +1,15 @@
 //헤더 컴포넌트
 class HeaderComp{
     
-    constructor(){
-        this.htmlUrl = config.HTML.prefix + "common/header.html";
+    constructor(parentEl){
+        this.htmlUrl = "common/header.html";
+        this.parentEl = parentEl;
         this.el;
     }
     
-    async init(targetEl){
+    async init(){
         this.el = await getFragHtml(this.htmlUrl);
-        appendNode(targetEl,this.el);
+        appendNode(this.parentEl,this.el);
         this.addEvent();
     }
 

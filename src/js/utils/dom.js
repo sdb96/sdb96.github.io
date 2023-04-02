@@ -10,8 +10,7 @@ function appendNode(targetNode,itemNode,pos="beforeend"){
     
     //falsy
     if(!checkValidete(itemNode) || !checkValidete(targetNode)){
-        console.error("item or target is falsy");
-        return false;
+        throw("item or target is falsy");
     }
 
     if(itemNode instanceof NodeList){

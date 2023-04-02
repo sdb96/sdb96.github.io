@@ -18,17 +18,23 @@
         <script src="/src/js/utils/validate.js"></script>
         <script src="/src/js/utils/http.js"></script>
         <script src="/src/js/utils/dom.js"></script>
+        <!-- 페이지 히스토리 -->
+        <script defer src="/src/js/utils/History.js"></script>
         <!-- Components -->
         <script src="/src/js/component/common/HeaderComp.js"></script>
         <script src="/src/js/component/common/FooterComp.js"></script>
         <script src="/src/js/component/common/DefaultComp.js"></script>
+        <script src="/src/js/component/menu/main/MainMenuComp.js"></script>
+        <script src="/src/js/component/menu/develop/DevelopMenuComp.js"></script>
+        <script src="/src/js/component/menu/daily/DailyenuComp.js"></script>
         <!-- Menus -->
         <script src="/src/js/menu/MainMenu.js"></script>
         <script src="/src/js/menu/DevelopmentMenu.js"></script>
         <script src="/src/js/menu/DailyMenu.js"></script>
         <script src="/src/js/menu/ScheduleMenu.js"></script>
-        <!-- Factory -->
-        <script src="/src/js/factory/MenuFactory.js"></script>
+        <!-- Factory --> <!--static 으로 parentEl 선언을 위해 defer로 지정-->
+        <script defer src="/src/js/factory/MenuFactory.js"></script>
+        
         <!-- css -->
         <link rel="stylesheet" href="/src/css/style.css">
         
@@ -36,11 +42,24 @@
     </head>
 
     <body>
+        <nav id="header-nav">
+
+        </nav>
+        <nav id="menu-nav">
+
+        </nav>
+        <nav id="footer-nav">
+
+        </nav>
+
         <script>
-            const defComp = new DefaultComp();
-            defComp.init();
-            const MENU = MenuFactory.getMenu(MenuFactory.TYPE.Main);
-            MENU.init();
+            document.addEventListener('DOMContentLoaded',()=>{
+                const defComp = new DefaultComp();
+                defComp.init();
+                MenuFactory.changeMenu(MenuFactory.TYPE.Main);
+                // const MENU = MenuFactory.getMenu(MenuFactory.TYPE.Main);
+                window.addEventListener('popstate',History.callHistory);
+            })
         </script>
     </body>
 

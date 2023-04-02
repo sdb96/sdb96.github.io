@@ -1,21 +1,31 @@
-<nav class="nav-bar">
-    <div class="nav-bar__logo">
-        <i class="fa-brands fa-accusoft"></i>
-        <a href="#" menu="Main">DreamCoding</a>
-    </div>
+<nav id="nav-bar">
+        <!-- logo area -->
+        <div class="nav-bar logo-box">
+            <div class="nav-bar__logo">
+                <i class="i-home" menu="Main"></i>
+                <a href="#" menu="Main" onclick="return false;">SDB96</a>
+            </div>
+        </div>
+
+        <!-- menu area -->
+        <div class="nav-bar menu-box">
+            <ul class="nav-bar__menu">
+                <li menu="Development">개발</li>
+                <li menu="Daily">일기</li>
+                <li menu="Schedule">목표관리</li>
+                <!-- <li><a href="#">FAQ</a></li> -->
+                <!-- <li><a href="#">Bookings</a></li> -->
+            </ul>
+        </div>
+
+        <!-- sns area -->
+        <div>
+            <ul class="nav-bar__sns">
+                <li><i class="i-instagram"></i></li>
+            </ul>
+            <a href="#" class="nav-bar__toggle-btn">
+                <i class="i-menu"></i>
+            </a>
+        </div>
     
-    <ul class="nav-bar__menu">
-        <li><a href="#" menu="Development">개발</a></li>
-        <li><a href="#" menu="Daily">일기</a></li>
-        <li><a href="#" menu="Schedule">목표관리</a></li>
-        <!-- <li><a href="#">FAQ</a></li> -->
-        <!-- <li><a href="#">Bookings</a></li> -->
-    </ul>
-    
-    <ul class="nav-bar__icons">
-        <li><i class="i-instagram"></i></li>
-    </ul>
-    <a href="#" class="nav-bar__toggle-btn">
-        <i class="i-menu"></i>
-    </a>
 </nav>

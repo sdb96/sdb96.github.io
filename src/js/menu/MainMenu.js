@@ -5,11 +5,12 @@ class MainMenu{
     }
 
     async init(){
-        // this.COMPS.DefaultComp = new DefaultComp();
+        const menuNavEl = document.querySelector("#menu-nav");
+        this.COMPS.MainMenuComp = new MainMenuComp(menuNavEl);
 
-        // for(const COMP in this.COMPS){
-        //     await this.COMPS[COMP].init(document.body);
-        // }
+        for(const COMP in this.COMPS){
+            await this.COMPS[COMP].init(document.body);
+        }
     }
 
 }

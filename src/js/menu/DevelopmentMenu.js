@@ -5,10 +5,10 @@ class DevelopmentMenu{
     }
 
     async init(){
-        // this.COMPS.DefaultComp = new DefaultComp();
+        this.COMPS.developMenuComp = new DevelopMenuComp();
 
-        // for(const COMP in this.COMPS){
-        //     await this.COMPS[COMP].init(document.body);
-        // }
+        for(const COMP in this.COMPS){
+            await this.COMPS[COMP].init(document.body);
+        }
     }
 }
