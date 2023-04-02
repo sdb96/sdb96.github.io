@@ -25,10 +25,6 @@ class MenuFactory{
 
     static async changeMenu(type){ 
         const menu = this.getMenu(type);
-
-        //히스토리에 메뉴 초기화 함수 기록
-        History.addHistory(menu.init);
-
         this.menuNavEl.innerHTML ='';
 
         console.log(type)
