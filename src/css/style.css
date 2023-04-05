@@ -1,14 +1,16 @@
 /* css 변수선언 */ /* 사용시 var(변수명) */
 :root {
     --text-color:#f0f4f5;
-    --background-color:#262626;
+    --main-color:#262626;
     --accent-color:#d49466;
     --font-en:'Rubik', sans-serif;
 }
 
 /*tag default */
+*{color: var(--text-color);}
 html,body {height:100vh; font-family: "Noto Sans KR variant0", Tofu;}
 body {margin:0;}
+/* li{list-style: none;} */
 a {text-decoration: none; color: var(--text-color);}
 i {display: inline-block; background-repeat: no-repeat; line-height: 0; vertical-align: middle;}
 /*End tag default */
@@ -16,6 +18,10 @@ i {display: inline-block; background-repeat: no-repeat; line-height: 0; vertical
 /* 메뉴 공통 박스 */
 #menu-box{height: 100vh;}
 
+div.circle{border-radius: 70%; overflow: hidden;}
+/* div.hexagon{} */
+
+.flex{display: flex;}
 
 
 /* icon*/

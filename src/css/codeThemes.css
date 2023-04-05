@@ -1,0 +1,21 @@
+
+div.code-print{background: rgba(38 38 38);}
+/* 글자간격 */
+span.code{float: left; text-indent: 1px;}
+/* 선언자 */
+span.code.declarer{color: #2566ca;}
+/* 키워드 */
+span.code.keyword{color: #3ac9b0;}
+/* 문자 */
+span.code.str{color: #ce9178;}
+span.code.number{color: #b5c077;}
+/* 탭 >> &#9; 사용 */
+span.code.tab{ white-space: pre;}
+/* 소괄호 */
+span.code.paren{color: #a363ca}
+/* 중괄호 */
+span.code.brace{color: #1c8fff;}
+/* 변수,object의 키, 인자, 매개변수 */
+span.code.variable{color: #7bdcfe;}
+/* 콤마 */
+span.code.comma{color: #d4d4c9;}

@@ -1,5 +1,5 @@
 /* 하단 footer */
-#footer-container {display: flex; align-items: center; justify-content: center; width: 100%; height: 50px; background-color: var(--background-color);}
+#footer-container {display: flex; align-items: center; justify-content: center; width: 100%; height: 50px; background-color: var(--main-color);}
 .personal-info {color: var(--text-color); font-size: 0.8em;}
 #footer-container .line{color: var(--text-color);}
 #footer-container .line::before{content:'|'; font-size: 1em; color: #c3c3c3; padding: 10px 10px;}
