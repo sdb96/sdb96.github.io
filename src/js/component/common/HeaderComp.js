@@ -34,7 +34,7 @@ class HeaderComp{
 
     menuToggleEvt(){
         const menuEl = this.el.querySelector(".nav-bar__menu");
-        const iconsEl = this.el.querySelector(".nav-bar__icons");
+        const iconsEl = this.el.querySelector(".nav-bar__sns");
         menuEl.classList.toggle("active");
         iconsEl.classList.toggle("active");
     }

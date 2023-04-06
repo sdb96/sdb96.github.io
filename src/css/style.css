@@ -1,18 +1,17 @@
 /* css 변수선언 */ /* 사용시 var(변수명) */
 :root {
+    --base-color:#262626;
+    --sub-color:#0f6ae5;
     --text-color:#f0f4f5;
-    --main-color:#262626;
-    --accent-color:#d49466;
     --font-en:'Rubik', sans-serif;
 }
 
 /*tag default */
-*{color: var(--text-color);}
 html,body {height:100vh; font-family: "Noto Sans KR variant0", Tofu;}
 body {margin:0;}
-/* li{list-style: none;} */
-a {text-decoration: none; color: var(--text-color);}
-i {display: inline-block; background-repeat: no-repeat; line-height: 0; vertical-align: middle;}
+a {text-decoration: none; color: none;}
+i {display: inline-block; width: 40px; height: 40px; background-repeat: no-repeat; line-height: 0; vertical-align: middle;}
+i:hover {cursor: pointer;}
 /*End tag default */
 
 /* 메뉴 공통 박스 */
@@ -25,9 +24,8 @@ div.circle{border-radius: 70%; overflow: hidden;}
 
 
 /* icon*/
-i {width: 30px; height: 30px;}
-i:hover {cursor: pointer;}
+
 .i-instagram {background-image: url(../icon/icon_instagram.png); background-size: contain;}
-.i-menu {background-image: url(../icon/icon_menu.png);}
+.i-menu {background-image: url(../icon/icon_menu.png); width: 30px; height: 30px;}
 .i-home {background-image: url(../icon/icon_home.png); background-size: contain;}
 /*End icon*/
