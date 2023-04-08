@@ -9,7 +9,7 @@
 .nav-bar.menu-box {display: flex; flex-grow: 1; justify-content: center; }
 .nav-bar__menu {display: flex; flex-grow: 1; justify-content: center; list-style: none; padding-left: 0; margin: 0;}
 .nav-bar__menu li {padding : 8px 12px; text-decoration: none; font-size: 16px; color: var(--text-color);}
-.nav-bar__menu li:hover {background-color: #d49466; border-radius: 4px; cursor: pointer;}
+.nav-bar__menu li:hover {background-color: var(--sub-color); border-radius: 4px; cursor: pointer;}
 
 /* SNS */
 .nav-bar.sns-box {display: flex; flex-direction: row-reverse; flex-grow: 1;}

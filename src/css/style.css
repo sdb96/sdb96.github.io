@@ -1,31 +1,59 @@
 /* css 변수선언 */ /* 사용시 var(변수명) */
 :root {
     --base-color:#262626;
-    --sub-color:#0f6ae5;
+    /* --sub-color:#0f6ae5; */
+    --sub-color:#b37040;
     --text-color:#f0f4f5;
     --font-en:'Rubik', sans-serif;
 }
-
 /*tag default */
-html,body {height:100vh; font-family: "Noto Sans KR variant0", Tofu;}
+html,body {height:100vh; font-family: "Noto Sans KR"}
 body {margin:0;}
 a {text-decoration: none; color: none;}
-i {display: inline-block; width: 40px; height: 40px; background-repeat: no-repeat; line-height: 0; vertical-align: middle;}
-i:hover {cursor: pointer;}
+i {display: inline-block; width: 30px; height: 30px; background-repeat: no-repeat; background-size: contain; line-height: 0; vertical-align: middle;}
 /*End tag default */
 
+#wrapper{display: flex;flex-direction: column;}
+
 /* 메뉴 공통 박스 */
-#menu-box{height: 100vh;}
+#menu-box{min-height: 100vh;}
+#header-nav{position: sticky; top:0; width: 100%;}
 
 div.circle{border-radius: 70%; overflow: hidden;}
 /* div.hexagon{} */
 
 .flex{display: flex;}
+.half-hl{background: linear-gradient(to top, var(--sub-color), transparent 45%);}
 
+/* icons==========================================================================*/
+.i-menu {background-image: url(../icons/icon_menu.png); width: 30px; height: 30px;}
+.i-home {background-image: url(../icons/icon_home.png);}
 
-/* icon*/
+/* sns & ... */
+.i-instagram {background-image: url(../icons/sns/icon_instagram.png);}
+.i-instagram:hover{cursor: pointer;}
 
-.i-instagram {background-image: url(../icon/icon_instagram.png); background-size: contain;}
-.i-menu {background-image: url(../icon/icon_menu.png); width: 30px; height: 30px;}
-.i-home {background-image: url(../icon/icon_home.png); background-size: contain;}
-/*End icon*/
+/* back-end */
+.i-java {background-image: url(../icons/backend/icon_java.png);}
+.i-spring {background-image: url(../icons/backend/icon_spring.png);}
+
+/* font-end */
+.i-js {background-image: url(../icons/frontend/icon_js.png);}
+.i-ts {background-image: url(../icons/frontend/icon_ts.png);}
+.i-react{background-image: url(../icons/frontend/icon_react.svg);}
+.i-ol{background-image: url(../icons/frontend/icon_ol.png);}
+
+/* DB */
+.i-oracle{background-image: url(../icons/db/icon_oracle.png);}
+.i-postgresql{background-image: url(../icons/db/icon_postgresql.png);}
+
+/* ci/cd */
+.i-github{background-image: url(../icons/cicd/icon_github.png);}
+.i-svn{background-image: url(../icons/cicd/icon_svn.png);}
+.i-maven{background-image: url(../icons/cicd/icon_maven.png);}
+.i-jenkins{background-image: url(../icons/cicd/icon_jenkins.png);}
+
+/* tool */
+.i-slack{background-image: url(../icons/tool/icon_slack.png);}
+.i-clickup{background-image: url(../icons/tool/icon_clickup.png);}
+/*End icons========================================================================*/

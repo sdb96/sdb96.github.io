@@ -7,20 +7,45 @@
 
 /* 공통 */
 article#content{display: flex; flex-direction: column;}
-article{padding: 20px;}
+article{padding-bottom: 20px;}
+.section-title>h1{text-align: center; font-size: 25pt; margin: 0;color: var(--sub-color);}
 
 /* 타이틀 */
-article#main-title{text-align: center;}
+article#main-title{width: 100%; text-align: center; padding-top: 20px;}
 article#main-title .title-txt{font-size: 25px; font-family: var(--font-en); color: var(--base-color);}
 .h-line{background-color: var(--base-color); opacity: 0.5; border: 0; width: 20em; height: 1px; transition-duration: 1s;}
 .h-dashed-line{border: dashed 1px var(--base-color); opacity: 0.5;}
 
 /* 개인정보 */
 #my-info .section-content{padding: 0; align-items: center;}
-#my-info .section-content .code-print{width: 25em; height: 13em; margin-left: 3em; padding: 1em;}
-#my-info .profile{width: 15em; height: 15em; border-radius: 25%; background: url(../image/test.jpg) no-repeat 100%; background-size: cover; box-shadow: var(--base-color) 0 0 13px;}
+#my-info .section-content .code-print{width: 100%; height: 13em; margin-left: 3em; padding: 1em;}
+#my-info .profile{min-width: 15em; height: 15em; border-radius: 25%; background: url(../image/.jpg) no-repeat 100%; background-size: cover; box-shadow: var(--base-color) 0 0 13px;}
 
+/* Skills */
+/* .skill-content{align-items: center;} */
+.section-content h2{margin: 0;}
+.section-content p{margin: 0.5em 0em;}
+/* .skill-content li{padding: 10px 0px 10px 0px;} */
+.skill-content li span{padding-left: 0.5em;}
+.skill-content span.lack{text-decoration: line-through; text-decoration-style: double; text-decoration-color: red; }
+.half-hl.lack{background: linear-gradient(to top, red, transparent 45%);}
+/* 반응형 css */
+
+@media screen and (max-width: 768px) {
+    /* #menu-box{width: 40em;} */
+    /* #menu-box.main-container{width: 20em;} */
+    #my-info .section-content .code-print {margin: 0em 0em 0em 1em; padding: 0;}
+    /* #my-info .profile{min-width: 10em; height: 10em;} */
+    /* #my-info .section-content.flex{flex-direction: column;} */
+}
 @media screen and (min-width: 768px) {
+    
     #menu-box.main-container{ max-width: 768px;}
-    .profile{min-width: 15em;}
+    
+    /* .profile{min-width: 15em;} */
+}
+
+@media screen and (max-width: 576px) {
+    
+    /* #my-info .section-content .code-print {margin-left: 1em;} */
 }
