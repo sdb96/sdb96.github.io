@@ -23,7 +23,7 @@ div.circle{border-radius: 70%; overflow: hidden;}
 /* div.hexagon{} */
 
 .flex{display: flex;}
-.half-hl{background: linear-gradient(to top, var(--sub-color), transparent 45%);}
+.half-hl{background: linear-gradient(to top, var(--sub-color), transparent 33%);}
 
 /* icons==========================================================================*/
 .i-menu {background-image: url(../icons/icon_menu.png); width: 30px; height: 30px;}
@@ -34,8 +34,8 @@ div.circle{border-radius: 70%; overflow: hidden;}
 .i-instagram:hover{cursor: pointer;}
 
 /* back-end */
-.i-java {background-image: url(../icons/backend/icon_java.png);}
-.i-spring {background-image: url(../icons/backend/icon_spring.png);}
+.i-java {background-image: url(../icons/backend/icon_java.svg);}
+.i-spring {background-image: url(../icons/backend/icon_spring.svg);}
 
 /* font-end */
 .i-js {background-image: url(../icons/frontend/icon_js.png);}
@@ -44,16 +44,17 @@ div.circle{border-radius: 70%; overflow: hidden;}
 .i-ol{background-image: url(../icons/frontend/icon_ol.png);}
 
 /* DB */
-.i-oracle{background-image: url(../icons/db/icon_oracle.png);}
-.i-postgresql{background-image: url(../icons/db/icon_postgresql.png);}
+.i-oracle{background-image: url(../icons/db/icon_oracle.svg);}
+.i-postgresql{background-image: url(../icons/db/icon_postgresql.svg);}
 
 /* ci/cd */
 .i-github{background-image: url(../icons/cicd/icon_github.png);}
-.i-svn{background-image: url(../icons/cicd/icon_svn.png);}
+.i-svn{background-image: url(../icons/cicd/icon_svn.svg);}
 .i-maven{background-image: url(../icons/cicd/icon_maven.png);}
+.i-npm{background-image: url(../icons/cicd/icon_npm.svg);}
 .i-jenkins{background-image: url(../icons/cicd/icon_jenkins.png);}
 
 /* tool */
-.i-slack{background-image: url(../icons/tool/icon_slack.png);}
+.i-slack{background-image: url(../icons/tool/icon_slack.svg);}
 .i-clickup{background-image: url(../icons/tool/icon_clickup.png);}
 /*End icons========================================================================*/

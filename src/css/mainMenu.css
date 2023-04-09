@@ -12,7 +12,7 @@ article{padding-bottom: 20px;}
 
 /* 타이틀 */
 article#main-title{width: 100%; text-align: center; padding-top: 20px;}
-article#main-title .title-txt{font-size: 25px; font-family: var(--font-en); color: var(--base-color);}
+article#main-title .title-txt{font-size: 25px; color: var(--base-color);}
 .h-line{background-color: var(--base-color); opacity: 0.5; border: 0; width: 20em; height: 1px; transition-duration: 1s;}
 .h-dashed-line{border: dashed 1px var(--base-color); opacity: 0.5;}
 
@@ -22,13 +22,25 @@ article#main-title .title-txt{font-size: 25px; font-family: var(--font-en); colo
 #my-info .profile{min-width: 15em; height: 15em; border-radius: 25%; background: url(../image/.jpg) no-repeat 100%; background-size: cover; box-shadow: var(--base-color) 0 0 13px;}
 
 /* Skills */
-/* .skill-content{align-items: center;} */
 .section-content h2{margin: 0;}
 .section-content p{margin: 0.5em 0em;}
-/* .skill-content li{padding: 10px 0px 10px 0px;} */
 .skill-content li span{padding-left: 0.5em;}
 .skill-content span.lack{text-decoration: line-through; text-decoration-style: double; text-decoration-color: red; }
-.half-hl.lack{background: linear-gradient(to top, red, transparent 45%);}
+.half-hl.lack{background: linear-gradient(to top, red, transparent 33%);}
+
+.skill-content li{padding-top: 0.3em;}
+.skill-content li+ol{margin: 0.3em 1.5em; padding: 0;}
+.skill-content .i-java{height: 3em;}
+.skill-content .i-spring{width: 8em;}
+.skill-content .i-oracle{width: 8em;}
+.skill-content .i-maven{width:  7.5em;}
+.skill-content .i-clickup{width: 8em;}
+.skill-content .i-slack{width: 8em;}
+.skill-content .i-npm {width: 4.9em;}
+
+/* experience */
+.experience-content{align-items: center;}
+.experience-title{width: 8em;}
 /* 반응형 css */
 
 @media screen and (max-width: 768px) {
