@@ -44,7 +44,10 @@ article#main-title .title-txt{font-size: 25px; color: var(--base-color);}
 
 /* experience */
 .experience-content{align-items: center;}
-.experience-title{width: 8em;}
+.experience-title{width: 12em; flex-direction: column;}
+.experience-title:first-child{border-left: solid 5px var(--sub-color); height: 1.5em;}
+.experience-title .period{font-size: 10pt; color: var(--base-color); opacity: 0.5;}
+
 /* table td{display: flex;} */
 #skills table{width: 100%; border-collapse: collapse;}
 #skills td:first-child{text-align: center; width: 9em;}
@@ -75,3 +78,26 @@ article#main-title .title-txt{font-size: 25px; color: var(--base-color);}
     
     /* #my-info .section-content .code-print {margin-left: 1em;} */
 }
+
+
+/* .test{
+    border-right: 3px solid white;
+    animation:blink 0.8s infinite, typing 2s steps(22);
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+    @keyframes blink{
+        50%{
+            border-left: 3px solid white;
+            
+        }
+    }
+    @keyframes typing{
+        from{
+            width: 0;
+        }
+        to{
+            width: 300px;
+        }
+    } */
