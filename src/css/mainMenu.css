@@ -42,42 +42,36 @@ article#main-title .title-txt{font-size: 25px; color: var(--base-color);}
 .skill-content .i-slack{width: 8em;}
 .skill-content .i-npm {width: 4.9em;}
 
-/* experience */
-.experience-content{align-items: center;}
-.experience-title{width: 12em; flex-direction: column;}
-.experience-title:first-child{border-left: solid 5px var(--sub-color); height: 1.5em;}
-.experience-title .period{font-size: 10pt; color: var(--base-color); opacity: 0.5;}
-
-/* table td{display: flex;} */
 #skills table{width: 100%; border-collapse: collapse;}
 #skills td:first-child{text-align: center; width: 9em;}
 #skills td:nth-child(even){padding: 0.5em;}
 #skills td{border: 1px solid;}
-/* thead th{border: 1px solid;} */
+
+/* experience */
+.experience-content{align-items: center;}
+.experience-title{width: 25%; flex-direction: column;}
+.experience-title:first-child{border-left: solid 5px var(--sub-color); height: 1.5em;}
+.experience-title .period{font-size: 10pt; color: var(--base-color); opacity: 0.5;}
+.experience-item{width: 75%;}
+
 
 
 /* 반응형 css */
 
 @media screen and (max-width: 768px) {
-    /* #menu-box{width: 40em;} */
-    /* #menu-box.main-container{width: 20em;} */
     *{font-size: 10pt;}
     .section-title>h2 {font-size: 20pt;margin: 0.2em 0em;}
     #my-info .section-content .code-print {margin: 0em 0em 0em 1em;}
     #my-info .profile{min-width: 10em; height: 10em;}
-    /* #my-info .section-content.flex{flex-direction: column;} */
 }
 @media screen and (min-width: 768px) {
     
     #menu-box.main-container{ max-width: 768px;}
-    
-    /* .profile{min-width: 15em;} */
 }
 
-@media screen and (max-width: 576px) {
-    
+/* @media screen and (max-width: 576px) { */
     /* #my-info .section-content .code-print {margin-left: 1em;} */
-}
+/* } */
 
 
 /* .test{
