@@ -1,8 +1,8 @@
 class Introduce{
 
     //temple로 변경?
-    constructor(itemTxt,ceontent){
-        this.itemTxt = itemTxt;
-        this.ceontent = ceontent;
+    constructor(data){
+        this.title = data.title;
+        this.content = data.content;
     }
 }

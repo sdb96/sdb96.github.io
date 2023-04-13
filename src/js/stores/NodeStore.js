@@ -11,4 +11,12 @@ class NodeStore{
         }),
     }
 
+    static introduceNode =
+    {
+        highlite:createEl({
+            tagName:'b',
+            attrs : {class:'half-hl'},
+            // text : item[matchKey]
+        }),
+    }
 }

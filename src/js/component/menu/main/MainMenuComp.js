@@ -8,7 +8,7 @@ class MainMenuComp{
     
     async init(){
         this.el = await getFragHtml(this.htmlUrl);
-        appendNode(MenuFactory.menuNavEl,this.el);
+        // appendNode(MenuFactory.menuNavEl,this.el);
         // this.addEvent();
     }
 }

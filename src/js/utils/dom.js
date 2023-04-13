@@ -40,7 +40,15 @@ function appendNode(targetNode,itemNode,pos='beforeend'){
     }
 
     if(itemNode instanceof Node){
-        targetNode.insertAdjacentElement(pos,itemNode);
+        //element Node
+        if(itemNode.nodeType === 1){
+            targetNode.insertAdjacentElement(pos,itemNode);
+        }
+        //text Node
+        if(itemNode.nodeType === 3){
+            targetNode.insertAdjacentHTML(pos,itemNode.textContent);
+        }
+        
     }
 }
 
