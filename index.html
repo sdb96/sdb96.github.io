@@ -19,22 +19,28 @@
         <script src="/src/js/utils/dom.js"></script>
         
         <!-- Stores -->
-        <script src="/src/js/stores/NodeStore.js"></script>
+        <script src="/src/js/stores/NodeStorage.js"></script>
 
-        <!-- test area -->
-        <script src="/src/js/component/menu/main/introduce/Introduce.js"></script>
-        <script src="/src/js/component/menu/main/data/IntroduceData.js"></script>
-        <script src="/src/js/component/menu/main/IntroduceComp.js"></script>
-
-
-
-        <!-- Components -->
-        <script src="/src/js/component/common/HeaderComp.js"></script>
-        <script src="/src/js/component/common/FooterComp.js"></script>
-        <script src="/src/js/component/common/DefaultComp.js"></script>
-        <script src="/src/js/component/menu/main/MainMenuComp.js"></script>
-        <script src="/src/js/component/menu/develop/DevelopMenuComp.js"></script>
-        <script src="/src/js/component/menu/daily/DailyenuComp.js"></script>
+        <!-- template -->
+        <script src="/src/js/menu/main/template/titleTemplate.js"></script>
+        <script src="/src/js/menu/main/template/ContentTemplate.js"></script>
+        
+        <!-- data -->
+        <script src="/src/js/menu/main/data/IntroduceData.js"></script>
+        <script src="/src/js/menu/main/data/skillsData.js"></script>
+        <!-- common components -->
+        <script src="/src/js/menu/common/compoment/HeaderComp.js"></script>
+        <script src="/src/js/menu/common/compoment/FooterComp.js"></script>
+        <script src="/src/js/menu/common/compoment/DefaultComp.js"></script>
+        
+        <!-- menu > main > components -->
+        <script src="/src/js/menu/main/component/MainMenuComp.js"></script>
+        <script src="/src/js/menu/main/component/IntroduceComp.js"></script>
+        <script src="/src/js/menu/main/component/SkillsComp.js"></script>
+        <!-- menu > develop > components -->
+        <script src="/src/js/menu/develop/component/DevelopMenuComp.js"></script>
+        <!-- menu > daily > components -->
+        <script src="/src/js/menu/daily/component/DailyenuComp.js"></script>
 
         <!-- Menus -->
         <script src="/src/js/menu/MainMenu.js"></script>
@@ -67,7 +73,7 @@
                 defComp.init();
                 MenuFactory.changeMenu(MenuFactory.TYPE.Main);
                 // const MENU = MenuFactory.getMenu(MenuFactory.TYPE.Main);
-                window.addEventListener('popstate',History.callHistory);
+                // window.addEventListener('popstate',History.callHistory);
             })
         </script>
     </body>

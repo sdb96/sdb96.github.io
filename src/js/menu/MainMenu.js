@@ -9,21 +9,21 @@ class MainMenu{
         //ready init component 
         this.COMPS.MainMenuComp = new MainMenuComp();
         this.COMPS.IntroduceComp = new IntroduceComp();
-        
-        //start components init >> component has element
+        this.COMPS.SkillsComp = new SkillsComp();
         const comps = this.COMPS;
-        const initComps = [];
-        for(const comp in comps){
-            initComps.push(comps[comp].init());
-        }
-        await Promise.all(initComps);
+
+        //start components init >> component has element
+        await comps.MainMenuComp.init();
 
         //append els
-        const menuNavEl = document.querySelector('#menu-nav');
-        appendNode(menuNavEl,comps.MainMenuComp.el);
+        const menuNavNode = document.querySelector('#menu-nav');
+        appendNode(menuNavNode,comps.MainMenuComp.el);
 
-        const introduceEl = document.querySelector('#introduce');
-        appendNode(introduceEl,comps.IntroduceComp.el);
+        const introduceNode = menuNavNode.querySelector('#introduce');
+        await comps.IntroduceComp.init(introduceNode);
+
+        const skillsNode = menuNavNode.querySelector('#skills');
+        await comps.SkillsComp.init(skillsNode);
 
     }
 

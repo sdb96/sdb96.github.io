@@ -30,7 +30,13 @@ function appendNode(targetNode,itemNode,pos='beforeend'){
     
     //falsy
     if(!checkValidete(itemNode) || !checkValidete(targetNode)){
-        throw('item or target is falsy');
+        // throw('item or target is falsy');
+        return new Error('item or target is falsy');
+    }
+
+    if(typeof itemNode === 'string'){
+        const textNode = document.createTextNode(itemNode);
+        targetNode.appendChild(textNode);
     }
 
     if(itemNode instanceof NodeList){
@@ -48,7 +54,8 @@ function appendNode(targetNode,itemNode,pos='beforeend'){
         if(itemNode.nodeType === 3){
             targetNode.insertAdjacentHTML(pos,itemNode.textContent);
         }
-        
     }
+
+    return targetNode;
 }
 
