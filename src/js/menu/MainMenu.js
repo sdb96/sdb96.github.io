@@ -10,6 +10,8 @@ class MainMenu{
         this.COMPS.MainMenuComp = new MainMenuComp();
         this.COMPS.IntroduceComp = new IntroduceComp();
         this.COMPS.SkillsComp = new SkillsComp();
+        this.COMPS.ExperienceComp = new ExperienceComp();
+
         const comps = this.COMPS;
 
         //start components init >> component has element
@@ -24,6 +26,9 @@ class MainMenu{
 
         const skillsNode = menuNavNode.querySelector('#skills');
         await comps.SkillsComp.init(skillsNode);
+
+        const ExperienceNode = menuNavNode.querySelector('#experience');
+        await comps.ExperienceComp.init(ExperienceNode);
 
     }
 

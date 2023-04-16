@@ -24,10 +24,12 @@ class SkillsComp {
         // append content
         const contentTempleRootNode = createEl({ tagName: 'ul' });
         const contentTamplate = new ContentTemplate(contentTempleRootNode,this.contentTempleNode);
-        const skillsContentNode = contentTamplate.getNodeFromData(skillsDatas.content);
-        const sectionContentNode = skillsEl.querySelector('.skill-content');
-        //append template
-        appendNode(sectionContentNode,skillsContentNode);
+        for(const skillsData of skillsDatas.content){
+            const skillsContentNode = contentTamplate.appendData(skillsData);
+            const sectionContentNode = skillsEl.querySelector('.skill-content');
+            //append template
+            appendNode(sectionContentNode,skillsContentNode);
+        }
         
         // title + content
         this.node = skillsEl;

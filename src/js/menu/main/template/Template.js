@@ -1,33 +1,61 @@
-class ContentTemplate{
+class Template{
 
-    constructor(templateRootNode, templateNode){
-        this.templateRootNode = templateRootNode.cloneNode(true);
-        this.templateNode = templateNode;
+    constructor(templateNode){
+        // this.templateRootNode = templateRootNode.cloneNode(true);
+        this.templateNode = templateNode.cloneNode(true);
         this.node;
-        this.type = templateRootNode.getAttribute("type");
+        // this.type = templateRootNode.getAttribute("type");
     }
 
     appendData(data){
         //template copy
         const copyTemplate = this.templateNode.cloneNode(true);
         
-        //append title
-        const titleData = data.title;
-        if(checkValidete(titleData)){this.appendTitleNode(copyTemplate,data.title);}
+        //content 
+        if(data instanceof Array){
+            //append title
+            const titleData = data.title;
+            if(checkValidete(titleData)){this.appendTitleNode(copyTemplate,data.title);}
+            
+            //append content
+            const contentData = data.content;
+            if(checkValidete(contentData)){this.appendContentNode(copyTemplate,contentData);}
+        }
+        //title
+        else if(data instanceof Object){
+            for(const key in data){
+                const item = data[key];
+
+                if(key === 'title'){
+                    const titleNode = this.templateNode.querySelector('.template-title-text');
+                    this.appendTitleNode(titleNode,item);
+                }else{
+                    const itemNode = this.createItemNode(item);
+                    appendNode(this.templateNode,itemNode);
+                }
+
+            }
+        }
+
         
-        //append content
-        const contentData = data.content;
-        if(checkValidete(contentData)){this.appendContentNode(copyTemplate,contentData);}
+
+        // //append title
+        // const titleData = data.title;
+        // if(checkValidete(titleData)){this.appendTitleNode(copyTemplate,data.title);}
+        
+        // //append content
+        // const contentData = data.content;
+        // if(checkValidete(contentData)){this.appendContentNode(copyTemplate,contentData);}
         
         //append template
-        appendNode(this.templateRootNode,copyTemplate);
+        // appendNode(this.templateRootNode,copyTemplate);
 
-        this.node = this.templateRootNode;
+        this.node = this.templateNode;
         return this.node;
     }
 
     appendContentNode(tamplateNode,contentItem){
-       const contentTargetEl = tamplateNode.querySelector('.template-content');
+       const contentTargetEl = tamplateNode.querySelector('.template-content-item');
        for(const item of contentItem){
            const itemNode = this.createItemNode(item); //textNode or orderNode
            appendNode(contentTargetEl,itemNode) 

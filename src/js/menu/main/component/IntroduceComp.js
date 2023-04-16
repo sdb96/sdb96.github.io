@@ -24,10 +24,14 @@ class IntroduceComp {
         // append content
         const contentTempleRootNode = createEl({ tagName: 'ul' });
         const contentTamplate = new ContentTemplate(contentTempleRootNode,this.contentTempleNode);
-        const introduceContentNode = contentTamplate.getNodeFromData(introduceDatas.content);
-        const sectionContentNode = introduceEl.querySelector('.section-content');
-        //append template
-        appendNode(sectionContentNode,introduceContentNode);
+
+        for(const introduceData of introduceDatas.content){
+            const introduceContentNode = contentTamplate.appendData(introduceData);
+            const sectionContentNode = introduceEl.querySelector('.section-content');
+            //append template
+            appendNode(sectionContentNode,introduceContentNode);
+        }
+
         
         // title + content
         this.node = introduceEl;
