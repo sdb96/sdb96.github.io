@@ -11,7 +11,7 @@ const experienceDatas = {
             'OpenLayers 라이브러리를 활용하여 동적 지도 활용법 교육',
             'Java JTS, geotools 라이브러리를 활용하여 spatial table CRUD 직접 구현 후 교육 및 소스코드 제공',
             '리액트 라이브러리를 활용하여 국내 프로젝트 진행',
-            '동료에게 state, prop,(re) rendering MoBX 라이브러리 리뷰하여 러닝 커브 극복',
+            '동료에게 state, prop,(re) rendering MobX 라이브러리 리뷰하여 러닝 커브 극복',
             'Chart.js 라이브러리 활용, 통계의 성격별로 템플릿화 제안',
         ]   
     },
