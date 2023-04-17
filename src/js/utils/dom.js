@@ -15,6 +15,9 @@ function createEl(opt){
             el.setAttribute(attr,value);
         }
     }
+    if(checkValidete(opt.class)){
+        el.classList.add(opt.class);
+    }
 
     //text
     if(checkValidete(opt.text)){

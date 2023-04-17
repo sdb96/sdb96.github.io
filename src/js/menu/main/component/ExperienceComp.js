@@ -6,64 +6,42 @@ class ExperienceComp {
         this.node;
     }
 
-    async init(experienceEl){
+    async init(experienceNode){
         
         //title Ttemplate
-        const titleTemplateUrl = 'menu/main/titleTemplate.html';
-        const titleTemplateNode = await getFragHtml(titleTemplateUrl);
+        const templateUrl = 'menu/main/titleTemplate.html';
+        const templateNode = await getFragHtml(templateUrl);
 
         //append title text
-        const titleTextNode = titleTemplateNode.querySelector('.section-title-content');
+        const titleTextNode = templateNode.querySelector('.section-title-content');
         appendNode(titleTextNode,experienceDatas.title); 
+        
         //append template
-        const experienceTitleNode = experienceEl.querySelector('.section-title') ;
-        appendNode(experienceTitleNode,titleTemplateNode);
+        const experienceTitleNode = experienceNode.querySelector('.section-title') ;
+        appendNode(experienceTitleNode,templateNode);
 
         const divTempleUrl = 'menu/main/divTemplate.html';
         const divTemplateNode = await getFragHtml(divTempleUrl);
+        const appendTargetNode = experienceNode.querySelector('.section-content');
         
-        
-        const divRootNode = experienceEl.querySelector('.section-content');
-        
-        // const divTemplate = new Template(divTemplateNode);
         for(const experienceData of experienceDatas.content){
             //copy template
             const cloneTemplateNode = divTemplateNode.cloneNode(true);
-           
+            const template = new Template(cloneTemplateNode);
+            
             //append title
-            const titleNode = cloneTemplateNode.querySelector(".template-title");
-            const TitleTemplate = new Template(titleNode);
-            TitleTemplate.appendTitleNode(titleNode,experienceData.title);
+            template.appendTitleNode(experienceData.title);
             
             //append content
-            const contentNode = cloneTemplateNode.querySelector('.template-content-item');
-            const contentTemplate = new Template(contentNode);
-            // const contentUlNode = createEl({tagName:'ul'});
-            const contentLiNode = createEl({tagName:'li'});
-            for(const contentItem of experienceData.content){
-                contentTemplate.appendContentNode(contentLiNode,contentItem);
-                appendNode(contentNode,contentLiNode);
-            }
-            // appendNode(uNode,liTemplateNode);
-            // appendNode(contentNode,uNode);
-            // appendNode(divTemplate,contentNode);
+            const contentLoopNode = createEl({tagName:'li',attrs:{template:'template-content-item'}});
+            template.appendContentNode(experienceData.content,contentLoopNode);
             
-            appendNode(divRootNode,cloneTemplateNode);
-        }
-        console.log();
+            //append content
+            appendNode(appendTargetNode,cloneTemplateNode);
 
-        //content template
-        // const contentTempleUrl = 'menu/main/liTemplate.html';
-        // this.contentTempleNode = await getFragHtml(contentTempleUrl);
-        // // append content
-        // const contentTempleRootNode = createEl({ tagName: 'ul' });
-        // const contentTamplate = new ContentTemplate(contentTempleRootNode,this.contentTempleNode);
-        // const experienceContentNode = contentTamplate.getNodeFromData(experienceDatas.content);
-        // const sectionContentNode = experienceEl.querySelector('.skill-content');
-        // //append template
-        // appendNode(sectionContentNode,experienceContentNode);
-        
-        // title + content
-        this.node = experienceEl;
+            // <hr class=".h-line"></hr> 반복 돌리기
+        }
+
+        this.node = experienceNode;
     }
 }

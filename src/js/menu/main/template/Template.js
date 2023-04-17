@@ -1,10 +1,15 @@
 class Template{
 
-    constructor(templateNode){
-        // this.templateRootNode = templateRootNode.cloneNode(true);
-        this.templateNode = templateNode.cloneNode(true);
+    /**
+     * 
+     * @typedef {Object} {} template Option
+     * @property {Node} templateNode
+     */
+    
+    constructor(opt){
+        this.templateNode = opt.templateNode;
+        this.contnetLoopNode = opt.contnetLoopNode;
         this.node;
-        // this.type = templateRootNode.getAttribute("type");
     }
 
     appendData(data){
@@ -51,19 +56,26 @@ class Template{
         // appendNode(this.templateRootNode,copyTemplate);
 
         this.node = this.templateNode;
-        return this.node;
     }
 
-    appendContentNode(tamplateNode,contentItem){
-       const contentTargetEl = tamplateNode.querySelector('.template-content-item');
+    appendContentNode(contentItem,loopNode){
+       const contentTargetEl = this.templateNode.querySelector('[template-role=content-items]');
+       const hasLoopNode = checkValidete(loopNode);
+       
        for(const item of contentItem){
-           const itemNode = this.createItemNode(item); //textNode or orderNode
-           appendNode(contentTargetEl,itemNode) 
+            let itemNode = this.createItemNode(item); //textNode or orderNode
+
+            if(hasLoopNode){
+                const cloneLoopNode = loopNode.cloneNode(true);
+                appendNode(cloneLoopNode,itemNode);
+                itemNode = cloneLoopNode;
+            }
+            appendNode(contentTargetEl,itemNode);
        }
    }
 
-    appendTitleNode(tamplateNode,titleItem){
-        const titleTargetNode = tamplateNode.querySelector('.template-title-text');
+    appendTitleNode(titleItem){
+        const titleTargetNode = this.templateNode.querySelector('[template-role=title-text]');
         const textItem = titleItem.text;
         const iconItem = titleItem.icon;
         const periodItem = titleItem.period;
@@ -71,7 +83,7 @@ class Template{
         if(iconItem instanceof Node){appendNode(titleTargetNode,iconItem);}
         if(typeof textItem === 'string'){appendNode(titleTargetNode,textItem);}
         if(checkValidete(periodItem)){
-            const periodTargetNode = tamplateNode.querySelector('.template-period');
+            const periodTargetNode = this.templateNode.querySelector('[template-role=title-period]');
             appendNode(periodTargetNode,periodItem);
         }
     }

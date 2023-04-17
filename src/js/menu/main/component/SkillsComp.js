@@ -6,7 +6,7 @@ class SkillsComp {
         this.node;
     }
 
-    async init(skillsEl){
+    async init(skillsNode){
         
         //title Ttemplate
         const titleTemplateUrl = 'menu/main/titleTemplate.html';
@@ -15,23 +15,31 @@ class SkillsComp {
         const titleTextNode = titleTemplateNode.querySelector('.section-title-content');
         appendNode(titleTextNode,skillsDatas.title); 
         //append template
-        const skillsTitleNode = skillsEl.querySelector('.section-title') ;
+        const skillsTitleNode = skillsNode.querySelector('.section-title') ;
         appendNode(skillsTitleNode,titleTemplateNode);
         
         //content template
-        const contentTempleUrl = 'menu/main/liTemplate.html';
-        this.contentTempleNode = await getFragHtml(contentTempleUrl);
-        // append content
-        const contentTempleRootNode = createEl({ tagName: 'ul' });
-        const contentTamplate = new ContentTemplate(contentTempleRootNode,this.contentTempleNode);
+        const liTempleUrl = 'menu/main/liTemplate.html';
+        const liTempleNode = await getFragHtml(liTempleUrl);
+        
+        const appendTargetNode = skillsNode.querySelector('.section-content');
         for(const skillsData of skillsDatas.content){
-            const skillsContentNode = contentTamplate.appendData(skillsData);
-            const sectionContentNode = skillsEl.querySelector('.skill-content');
-            //append template
-            appendNode(sectionContentNode,skillsContentNode);
+            //copy template
+            const cloneTemplateNode = liTempleNode.cloneNode(true);
+            const template = new Template(cloneTemplateNode);
+
+            //append title
+            template.appendTitleNode(skillsData.title);
+            
+            //append content
+            // const contentLoopNode = createEl({tagName:'li',attrs:{template:'template-content-item'}});
+            template.appendContentNode(skillsData.content);
+            
+            //append content
+            appendNode(appendTargetNode,cloneTemplateNode);
         }
         
         // title + content
-        this.node = skillsEl;
+        this.node = skillsNode;
     }
 }
