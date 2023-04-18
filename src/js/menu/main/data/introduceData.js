@@ -1,6 +1,6 @@
 const introduceDatas = {
     title : '소개',
-    content : [
+    contents : [
         {
             title:{
                 text:'소중한 해외경험',

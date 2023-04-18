@@ -1,6 +1,6 @@
 const experienceDatas = {
     title : '업무 경험',
-    content : [
+    contents : [
     {
         title:{
             text:'소중한 해외경험',

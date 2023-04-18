@@ -1,6 +1,6 @@
 const skillsDatas = {
     title : '보유기술',
-    content : [
+    contents : [
         {
             title:{
                 icon:NodeStorage.iconNode.js,
