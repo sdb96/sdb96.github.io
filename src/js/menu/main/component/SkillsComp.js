@@ -23,7 +23,7 @@ class SkillsComp {
         const liTempleNode = await getFragHtml(liTempleUrl);
         
         const appendTargetNode = skillsNode.querySelector('.section-content');
-        for(const skillsData of skillsDatas.content){
+        for(const skillsData of skillsDatas.contents){
             //copy template
             const cloneTemplateNode = liTempleNode.cloneNode(true);
             const template = new Template(cloneTemplateNode);

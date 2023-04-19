@@ -2,8 +2,9 @@ class Template{
 
     constructor(templateNode){
         // this.rootNode = createEl({tagName:'template'});
-        this.templateNode = templateNode;
+        this.templateNode = templateNode.cloneNode(true);
         this.loopNode = this.templateNode.querySelector('[template-role=loop]');
+        // this.loopNode;
         this.loopParentNode;
         this.hasLoopNode = false;
         this.node;
@@ -24,39 +25,45 @@ class Template{
         // template에 title이 있는경우가 있음
         
         for(const data of datas){
-            if(checkValidete(data)){
-                this.appendContentNode(data,this.loopNode);
+            const titleItem = data.title;
+            const detailItem = data.detail;
+            if(checkValidete(titleItem)){
+                this.appendTitleNode(titleItem);
+            }
+
+            if(checkValidete(detailItem)){
+                this.appendDetailNode(detailItem,this.loopNode);
             }
         }
         this.node = this.templateNode;
     }
 
-    appendContentNode(contentItem,loopNode){
+    appendDetailNode(detailItem,loopNode){
 
-        const contentTitleItem = contentItem.title;
-        const hasContentTitle = checkValidete(contentTitleItem);
+        const detailTitleItem = detailItem.title;
+        const hasdetailTitle = checkValidete(detailTitleItem);
 
         if(this.hasLoopNode){
-            const cloneLoopNode = loopNode.cloneNode(true);
-
-            if(hasContentTitle){
-                const contentTitleNode = cloneLoopNode.querySelector('[template-role=content-title-text]');
-                appendNode(contentTitleNode,contentTitleItem.text);
+            if(hasdetailTitle){
+                const detailTitleNode = this.templateNode.querySelector('[template-role=detail-title-text]');
+                appendNode(detailTitleNode,detailTitleItem.text);
             }
 
-            const contentItemNode = cloneLoopNode.querySelector('[template-role=content-items]');
-            for(const item of contentItem.content){
+            const detailItemNode = this.templateNode.querySelector('[template-role=detail-items]');
+            for(const item of detailItem){
+                const cloneLoopNode = loopNode.cloneNode(true);
                 let itemNode = this.createItemNode(item); //textNode or orderNode
-                appendNode(contentItemNode,itemNode);
+                appendNode(cloneLoopNode,itemNode);
+                appendNode(detailItemNode,cloneLoopNode);
             }
 
-            appendNode(this.loopParentNode,cloneLoopNode);
+            // appendNode(detailItemNode,detailItemNode);
         }
 
    }
 
     appendTitleNode(titleItem){
-        const titleTargetNode = this.rootNode.querySelector('[template-role=title-text]');
+        const titleTargetNode = this.templateNode.querySelector('[template-role=title-text]');
         const textItem = titleItem.text;
         const iconItem = titleItem.icon;
         const periodItem = titleItem.period;
@@ -64,7 +71,7 @@ class Template{
         if(iconItem instanceof Node){appendNode(titleTargetNode,iconItem);}
         if(typeof textItem === 'string'){appendNode(titleTargetNode,textItem);}
         if(checkValidete(periodItem)){
-            const periodTargetNode = this.rootNode.querySelector('[template-role=title-period]');
+            const periodTargetNode = this.templateNode.querySelector('[template-role=title-period]');
             appendNode(periodTargetNode,periodItem);
         }
     }
