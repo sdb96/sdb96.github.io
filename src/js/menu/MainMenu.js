@@ -21,11 +21,11 @@ class MainMenu{
         const menuNavNode = document.querySelector('#menu-nav');
         appendNode(menuNavNode,comps.MainMenuComp.el);
 
-        // const introduceNode = menuNavNode.querySelector('#introduce');
-        // await comps.IntroduceComp.init(introduceNode);
+        const introduceNode = menuNavNode.querySelector('#introduce');
+        await comps.IntroduceComp.init(introduceNode);
 
-        // const skillsNode = menuNavNode.querySelector('#skills');
-        // await comps.SkillsComp.init(skillsNode);
+        const skillsNode = menuNavNode.querySelector('#skills');
+        await comps.SkillsComp.init(skillsNode);
 
         const ExperienceNode = menuNavNode.querySelector('#experience');
         await comps.ExperienceComp.init(ExperienceNode);

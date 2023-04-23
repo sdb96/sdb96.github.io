@@ -44,9 +44,9 @@ const experienceDatas = {
         },
         detail:[
             '기존 프로그램의 repository 폴더를 초기 실행에 파악하여 생성하는 방법을 제안하여 유사 사업의 안정성 강화',
-                        '시스템 기능별 사용자 권한에 따른 동작 구현',
-                        'Java Apach Poi 라이브러리를 활용한 엑셀 공간데이터 업로드 기능구현',
-                        'CODE-RAY를 사용하여 보안성 조치, mybatis와 매핑되는 sql xml 문서의 SQL-injection 위험 요소를 조치',
+            '시스템 기능별 사용자 권한에 따른 동작 구현',
+            'Java Apach Poi 라이브러리를 활용한 엑셀 공간데이터 업로드 기능구현',
+            'CODE-RAY를 사용하여 보안성 조치, mybatis와 매핑되는 sql xml 문서의 SQL-injection 위험 요소를 조치',
         ]   
     },
 ]

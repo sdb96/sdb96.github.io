@@ -19,25 +19,36 @@ class SkillsComp {
         appendNode(skillsTitleNode,titleTemplateNode);
         
         //content template
-        const liTempleUrl = 'menu/main/liTemplate.html';
-        const liTempleNode = await getFragHtml(liTempleUrl);
+        // const liTempleUrl = 'menu/main/liTemplate.html';
+        // const liTempleNode = await getFragHtml(liTempleUrl);
         
-        const appendTargetNode = skillsNode.querySelector('.section-content');
-        for(const skillsData of skillsDatas.contents){
-            //copy template
-            const cloneTemplateNode = liTempleNode.cloneNode(true);
-            const template = new Template(cloneTemplateNode);
+         //content template
+         const liTempleUrl = 'menu/main/liTemplate.html';
+         const liTempleNode = await getFragHtml(liTempleUrl);
+ 
+         const appendTargetNode = skillsNode.querySelector('.section-content');
+         const contentTemplate = new Template(liTempleNode);
+         contentTemplate.appendData(skillsDatas.contents);
+         appendNode(appendTargetNode,contentTemplate.node);
 
-            //append title
-            template.appendTitleNode(skillsData.title);
+
+
+        // const appendTargetNode = skillsNode.querySelector('.section-content');
+        // for(const skillsData of skillsDatas.contents){
+        //     //copy template
+        //     const cloneTemplateNode = liTempleNode.cloneNode(true);
+        //     const template = new Template(cloneTemplateNode);
+
+        //     //append title
+        //     template.appendTitleNode(skillsData.title);
             
-            //append content
-            // const contentLoopNode = createEl({tagName:'li',attrs:{template:'template-content-item'}});
-            template.appendContentNode(skillsData.content);
+        //     //append content
+        //     // const contentLoopNode = createEl({tagName:'li',attrs:{template:'template-content-item'}});
+        //     template.appendContentNode(skillsData.content);
             
-            //append content
-            appendNode(appendTargetNode,cloneTemplateNode);
-        }
+        //     //append content
+        //     appendNode(appendTargetNode,cloneTemplateNode);
+        // }
         
         // title + content
         this.node = skillsNode;
