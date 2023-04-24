@@ -1,5 +1,5 @@
 const experienceDatas = {
-    title : '업무 경험',
+    mainTitle : '업무 경험',
     contents : [
     {
         title:{

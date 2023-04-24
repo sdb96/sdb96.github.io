@@ -13,43 +13,19 @@ class SkillsComp {
         const titleTemplateNode = await getFragHtml(titleTemplateUrl);
         //append title text
         const titleTextNode = titleTemplateNode.querySelector('.section-title-content');
-        appendNode(titleTextNode,skillsDatas.title); 
+        appendNode(titleTextNode,skillsDatas.mainTitle); 
         //append template
         const skillsTitleNode = skillsNode.querySelector('.section-title') ;
         appendNode(skillsTitleNode,titleTemplateNode);
         
         //content template
-        // const liTempleUrl = 'menu/main/liTemplate.html';
-        // const liTempleNode = await getFragHtml(liTempleUrl);
-        
-         //content template
-         const liTempleUrl = 'menu/main/liTemplate.html';
-         const liTempleNode = await getFragHtml(liTempleUrl);
- 
-         const appendTargetNode = skillsNode.querySelector('.section-content');
-         const contentTemplate = new Template(liTempleNode);
-         contentTemplate.appendData(skillsDatas.contents);
-         appendNode(appendTargetNode,contentTemplate.node);
+        const liTempleUrl = 'menu/main/liTemplate.html';
+        const liTempleNode = await getFragHtml(liTempleUrl);
+        const appendTargetNode = skillsNode.querySelector('.skill-content');
+        const contentTemplate = new Template(liTempleNode);
+        contentTemplate.appendData(skillsDatas.contents);
+        appendNode(appendTargetNode,contentTemplate.node);
 
-
-
-        // const appendTargetNode = skillsNode.querySelector('.section-content');
-        // for(const skillsData of skillsDatas.contents){
-        //     //copy template
-        //     const cloneTemplateNode = liTempleNode.cloneNode(true);
-        //     const template = new Template(cloneTemplateNode);
-
-        //     //append title
-        //     template.appendTitleNode(skillsData.title);
-            
-        //     //append content
-        //     // const contentLoopNode = createEl({tagName:'li',attrs:{template:'template-content-item'}});
-        //     template.appendContentNode(skillsData.content);
-            
-        //     //append content
-        //     appendNode(appendTargetNode,cloneTemplateNode);
-        // }
-        
         // title + content
         this.node = skillsNode;
     }

@@ -17,7 +17,10 @@ class TemplateRole{
                 },
                 
             },
-            state : 'template-state'
+            state :{
+                self : 'template-state',
+                done : 'done'
+            } 
         }
     }
 }

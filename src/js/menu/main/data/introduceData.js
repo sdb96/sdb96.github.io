@@ -1,5 +1,5 @@
 const introduceDatas = {
-    title : '소개',
+    mainTitle : '소개',
     contents : [
         {
             detail:[

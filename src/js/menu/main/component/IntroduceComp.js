@@ -14,7 +14,7 @@ class IntroduceComp {
         
         //append title text
         const titleTextNode = titleTemplateNode.querySelector('.section-title-content');
-        appendNode(titleTextNode,introduceDatas.title); 
+        appendNode(titleTextNode,introduceDatas.mainTitle); 
         
         //append title template
         const introduceTitleNode = introduceNode.querySelector('.section-title') ;

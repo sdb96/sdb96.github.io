@@ -14,7 +14,7 @@ class ExperienceComp {
 
         //append title text
         const titleTextNode = templateNode.querySelector('.section-title-content');
-        appendNode(titleTextNode,experienceDatas.title); 
+        appendNode(titleTextNode,experienceDatas.mainTitle); 
         
         //append template
         const experienceTitleNode = experienceNode.querySelector('.section-title') ;
