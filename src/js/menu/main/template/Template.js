@@ -14,17 +14,7 @@ class Template extends TemplateRole {
     this.detailItemNode = this.findNodeToRole(detailRole.detailItems.item);
 
     //loop
-    this.loopNode = this.templateNode.querySelector(`[${detailRole.loop}]`);
-    this.hasLoopNode = checkValidete(this.loopNode);
-    this.loopParentNode = this.hasLoopNode 
-                          ? this.loopNode.parentNode
-                          : null;
-
-    if (this.hasLoopNode) {
-      const loopTemp = this.loopNode.cloneNode(true);
-      this.templateNode.querySelector(`[${detailRole.loop}]`).remove();
-      this.loopNode = loopTemp;
-    }
+    this.loopMode = false;
 
     //tamplate state
     const templateState = this.templateRole.state;
@@ -34,9 +24,23 @@ class Template extends TemplateRole {
     this.node;
   }
 
+  setLoopMode(opt) {
+    this.loopMode = true;
+    this.loopCount = opt.count;
+
+    const loopNode = this.templateNode.querySelector(
+      `[${this.templateRole.detail.loop}]`
+    );
+    this.loopParentNode = loopNode.parentNode;
+    this.loopNode = loopNode.cloneNode(true);
+
+    while (--this.loopCount > 0) {
+      appendNode(this.loopParentNode, this.loopNode.cloneNode(true));
+    }
+  }
+
   appendData(datas) {
     for (const data of datas) {
-      
       const titleItem = data.title;
       if (checkValidete(titleItem)) {
         this.appendTitleNode(titleItem);
@@ -51,19 +55,15 @@ class Template extends TemplateRole {
   }
 
   appendDetailNode(detailItems) {
-    if (this.hasLoopNode) {
-      appendNode(this.loopParentNode, this.loopNode.cloneNode(true));
-    }
-
     //append title
     const titleObj = detailItems.find((item) => item.hasOwnProperty("title"));
-    if(checkValidete(titleObj)){
+    if (checkValidete(titleObj)) {
       const titleData = titleObj.title;
       const titleParentNode = this.findNodeToRole(
         this.templateRole.detail.title,
         true
       );
-      for(const key in titleData){
+      for (const key in titleData) {
         //text | icon
         const titleItemNode = titleData[key];
         appendNode(titleParentNode, titleItemNode);
@@ -73,18 +73,20 @@ class Template extends TemplateRole {
 
     //append detail
     const detailDatas = detailItems.filter((item) => titleObj !== item);
-    const detailItemNode = this.findNodeToRole(
-      this.templateRole.detail.detailItems.item,
-      true
-    );
     for (const detailData of detailDatas) {
+      const detailItemNode = this.findNodeToRole(
+        this.templateRole.detail.detailItems.item,
+        true
+      );
       const detailItem = this.createItemNode(detailData);
-      this.doneAppendNode(detailItemNode);
       appendNode(detailItemNode, detailItem);
+
+      //template Node 일때는 제외
+      if (!(detailItemNode instanceof HTMLTemplateElement)) {
+        this.doneAppendNode(detailItemNode);
+      }
     }
 
-    //
-    this.doneAppendNode(detailItemNode);
     this.readjustTemplateNode();
   }
 
@@ -132,21 +134,15 @@ class Template extends TemplateRole {
   }
 
   readjustTemplateNode() {
-    const detailItems = this.templateRole.detail.detailItems;
-    const templateNode = this.findNodeToRole(detailItems.item);
-
-    if (checkValidete(templateNode)) {
+    const templateNode = this.templateNode.querySelector("template");
+    if(checkValidete(templateNode)){
+      const templateParentNode = templateNode.parentNode;
       const childNodes = templateNode.childNodes;
-      if (childNodes.length > 0) {
-        const itemsNode = this.findNodeToRole(detailItems.self, true);
-
-        //append되면서 template의 index가 변경되므로 while로 처리
-        while (childNodes.length > 0) {
-          itemsNode.append(childNodes[0]);
-        }
-        this.doneAppendNode(itemsNode);
-        templateNode.remove();
+      while (childNodes.length > 0) {
+        templateParentNode.append(childNodes[0]);
       }
+      
+      templateNode.remove();
     }
   }
 

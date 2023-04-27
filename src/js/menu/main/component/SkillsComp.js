@@ -21,8 +21,14 @@ class SkillsComp {
         //content template
         const liTempleUrl = 'menu/main/liTemplate.html';
         const liTempleNode = await getFragHtml(liTempleUrl);
+
         const appendTargetNode = skillsNode.querySelector('.skill-content');
+
         const contentTemplate = new Template(liTempleNode);
+        const loopOpt = {
+            count : skillsDatas.contents.length
+        }
+        contentTemplate.setLoopMode(loopOpt);
         contentTemplate.appendData(skillsDatas.contents);
         appendNode(appendTargetNode,contentTemplate.node);
 

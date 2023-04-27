@@ -20,7 +20,7 @@ class TemplateRole{
             state :{
                 self : 'template-state',
                 done : 'done'
-            } 
+            }
         }
     }
 }

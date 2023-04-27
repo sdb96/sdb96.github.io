@@ -45,8 +45,6 @@ function appendNode(targetNode,itemNode,pos='beforeend'){
     if(itemNode instanceof NodeList){
         for(node of itemNode){
             targetNode.appendChild(node)
-            // targetNode.append(itemNode)
-            // targetNode.insertAdjacentElement(pos,itemNode);
         }
     }
 

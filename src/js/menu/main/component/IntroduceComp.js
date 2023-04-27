@@ -26,6 +26,10 @@ class IntroduceComp {
 
         const appendTargetNode = introduceNode.querySelector('.section-content');
         const contentTemplate = new Template(liTempleNode);
+        const loopOpt = {
+            count : introduceDatas.contents.length
+        }
+        contentTemplate.setLoopMode(loopOpt);
         contentTemplate.appendData(introduceDatas.contents);
         appendNode(appendTargetNode,contentTemplate.node);
         
