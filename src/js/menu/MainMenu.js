@@ -1,35 +1,57 @@
 //메인 메뉴
-class MainMenu{
-    constructor(){
-        this.COMPS = {};
+class MainMenu {
+  constructor() {
+    this.COMPS = {};
+    this.node;
+  }
+
+  async init() {
+    await this.initComps();
+
+    this.initFloatingMenu();
+  }
+
+  initComps() {
+    return new Promise(async (resolve) => {
+      //ready init component
+      this.COMPS.MainMenuComp = new MainMenuComp();
+      this.COMPS.IntroduceComp = new IntroduceComp();
+      this.COMPS.SkillsComp = new SkillsComp();
+      this.COMPS.ExperienceComp = new ExperienceComp();
+
+      const comps = this.COMPS;
+
+      //start components init >> component has element
+      await comps.MainMenuComp.init();
+
+      //append els
+      this.node = document.querySelector("#menu-nav");
+      appendNode(this.node, comps.MainMenuComp.el);
+
+      const introduceNode = this.node.querySelector("#introduce");
+      await comps.IntroduceComp.init(introduceNode);
+
+      const skillsNode = this.node.querySelector("#skills");
+      await comps.SkillsComp.init(skillsNode);
+
+      const ExperienceNode = this.node.querySelector("#experience");
+      await comps.ExperienceComp.init(ExperienceNode);
+
+      resolve(true);
+    });
+  }
+
+  initFloatingMenu() {
+    const opt = {};
+    this.COMPS.FloatingMenuComp = new FloatingMenu();
+    const floatingMenuNode = this.COMPS.FloatingMenuComp.node;
+
+    const connectIDs = [];
+    const articleNodes = this.node.querySelectorAll("article");
+    for(const articleNode of articleNodes){
+        connectIDs.push(articleNode.id);
     }
 
-    async init(){
-        
-        //ready init component 
-        this.COMPS.MainMenuComp = new MainMenuComp();
-        this.COMPS.IntroduceComp = new IntroduceComp();
-        this.COMPS.SkillsComp = new SkillsComp();
-        this.COMPS.ExperienceComp = new ExperienceComp();
-
-        const comps = this.COMPS;
-
-        //start components init >> component has element
-        await comps.MainMenuComp.init();
-
-        //append els
-        const menuNavNode = document.querySelector('#menu-nav');
-        appendNode(menuNavNode,comps.MainMenuComp.el);
-
-        const introduceNode = menuNavNode.querySelector('#introduce');
-        await comps.IntroduceComp.init(introduceNode);
-
-        const skillsNode = menuNavNode.querySelector('#skills');
-        await comps.SkillsComp.init(skillsNode);
-
-        const ExperienceNode = menuNavNode.querySelector('#experience');
-        await comps.ExperienceComp.init(ExperienceNode);
-
-    }
-
+    appendNode(this.node,floatingMenuNode);
+  }
 }
