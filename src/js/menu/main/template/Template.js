@@ -1,3 +1,4 @@
+"use strict"
 class Template extends TemplateRole {
   constructor(templateNode) {
     super();
@@ -42,12 +43,12 @@ class Template extends TemplateRole {
   appendData(datas) {
     for (const data of datas) {
       const titleItem = data.title;
-      if (checkValidete(titleItem)) {
+      if (checkValidate(titleItem)) {
         this.appendTitleNode(titleItem);
       }
 
       const detailItems = data.detail;
-      if (checkValidete(detailItems)) {
+      if (checkValidate(detailItems)) {
         this.appendDetailNode(detailItems);
       }
     }
@@ -57,7 +58,7 @@ class Template extends TemplateRole {
   appendDetailNode(detailItems) {
     //append title
     const titleObj = detailItems.find((item) => item.hasOwnProperty("title"));
-    if (checkValidete(titleObj)) {
+    if (checkValidate(titleObj)) {
       const titleData = titleObj.title;
       const titleParentNode = this.findNodeToRole(
         this.templateRole.detail.title,
@@ -101,7 +102,7 @@ class Template extends TemplateRole {
       appendNode(titleTextNode, textItem);
     }
 
-    if (checkValidete(periodItem)) {
+    if (checkValidate(periodItem)) {
       const periodTargetNode = this.findNodeToRole(titleRole.period);
       appendNode(periodTargetNode, periodItem);
     }
@@ -135,7 +136,7 @@ class Template extends TemplateRole {
 
   readjustTemplateNode() {
     const templateNode = this.templateNode.querySelector("template");
-    if(checkValidete(templateNode)){
+    if(checkValidate(templateNode)){
       const templateParentNode = templateNode.parentNode;
       const childNodes = templateNode.childNodes;
       while (childNodes.length > 0) {

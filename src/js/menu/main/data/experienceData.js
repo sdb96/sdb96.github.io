@@ -1,3 +1,4 @@
+"use strict"
 const experienceDatas = {
     mainTitle : '업무 경험',
     contents : [

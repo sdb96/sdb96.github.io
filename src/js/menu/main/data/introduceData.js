@@ -1,3 +1,4 @@
+"use strict"
 const introduceDatas = {
     mainTitle : '소개',
     contents : [

@@ -1,3 +1,4 @@
+"use strict"
 //개발메뉴 컴포넌트
 class DevelopMenuComp{
 

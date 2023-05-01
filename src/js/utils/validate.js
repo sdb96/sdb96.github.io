@@ -1,4 +1,5 @@
-function checkValidete(data){
+"use strict"
+function checkValidate(data){
     //is falsy return false;
     if(data === undefined || data === null){return false;}
 

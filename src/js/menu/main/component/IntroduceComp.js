@@ -1,3 +1,4 @@
+"use strict"
 class IntroduceComp {
     constructor(){
         this.titleNode;

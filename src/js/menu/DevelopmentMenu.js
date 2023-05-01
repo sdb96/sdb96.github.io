@@ -1,3 +1,4 @@
+"use strict"
 //개발메뉴
 class DevelopmentMenu{
     constructor(){

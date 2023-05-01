@@ -58,3 +58,7 @@ div.circle{border-radius: 70%; overflow: hidden;}
 .i-slack{background-image: url(../icons/tool/icon_slack.svg);}
 .i-clickup{background-image: url(../icons/tool/icon_clickup.png);}
 /*End icons========================================================================*/
+
+.floating-manu ul{list-style : none; padding: 0.5em;}
+.floating-manu ul li { margin: 0.5em 0em; opacity: 0.5; border-left: solid 5px var(--sub-color); cursor:pointer;}
+.floating-manu ul li.on{opacity: 1;}

@@ -1,3 +1,4 @@
+"use strict"
 class TemplateRole{
     constructor(){
         this.templateRole={

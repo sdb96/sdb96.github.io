@@ -1,3 +1,4 @@
+"use strict"
 //일기메뉴
 class DailyMenu{
     constructor(){

@@ -1,3 +1,4 @@
+"use strict"
 class DefaultComp{
     constructor(){
         this.COMPS = {};

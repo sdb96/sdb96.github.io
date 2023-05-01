@@ -1,4 +1,4 @@
-
+"use strict"
 //Dom 문서로 생성된 NodeList 리턴
 function createNode(fragHtml){
     const dom = new DOMParser().parseFromString(fragHtml,'text/html');
@@ -9,18 +9,18 @@ function createEl(opt){
     const el = document.createElement(opt.tagName);
 
     //attribute
-    if(checkValidete(opt.attrs)){
+    if(checkValidate(opt.attrs)){
         for(let attr in opt.attrs){
             const value = opt.attrs[attr];
             el.setAttribute(attr,value);
         }
     }
-    if(checkValidete(opt.class)){
+    if(checkValidate(opt.class)){
         el.classList.add(opt.class);
     }
 
     //text
-    if(checkValidete(opt.text)){
+    if(checkValidate(opt.text)){
         el.insertAdjacentText('afterbegin',opt.text);
     }
 
@@ -32,7 +32,7 @@ function createEl(opt){
 function appendNode(targetNode,itemNode,pos='beforeend'){
     
     //falsy
-    if(!checkValidete(itemNode) || !checkValidete(targetNode)){
+    if(!checkValidate(itemNode) || !checkValidate(targetNode)){
         // throw('item or target is falsy');
         return new Error('item or target is falsy');
     }

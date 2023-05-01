@@ -1,4 +1,4 @@
-
+"use strict"
 class MenuFactory{
     constructor(){}
     
@@ -16,11 +16,18 @@ class MenuFactory{
     //TYPE에 일치하는 메뉴 return
     static getMenu(type){
         const types = this.TYPE;
+
+        this.initDefaultComp();
         if(types.Main === type){this.MENU = new MainMenu();}
         if(types.Development === type){this.MENU = new DevelopmentMenu();}
         if(types.Schedule === type){this.MENU = new ScheduleMenu();}
         if(types.Daily === type){this.MENU = new DailyMenu();}
         return this.MENU;
+    }
+
+    static initDefaultComp(){
+        this.DefaultComp = new DefaultComp();
+        this.DefaultComp.init();
     }
 
     static async changeMenu(type){ 

@@ -1,3 +1,4 @@
+"use strict"
 class SkillsComp {
     constructor(){
         this.titleNode;

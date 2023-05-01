@@ -1,3 +1,4 @@
+"use strict"
 //메인메뉴 컴포넌트
 class MainMenuComp{
 

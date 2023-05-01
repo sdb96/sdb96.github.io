@@ -1,4 +1,4 @@
-
+"use strict"
 async function getFragHtml(url){
 
     const prefix = config.HTML.prefix;

@@ -1,3 +1,4 @@
+"use strict"
 //메인 메뉴
 class MainMenu {
   constructor() {
@@ -42,16 +43,24 @@ class MainMenu {
   }
 
   initFloatingMenu() {
-    const opt = {};
-    this.COMPS.FloatingMenuComp = new FloatingMenu();
+    const titleNodes = document.querySelectorAll(".section-title-content");
+    
+    const opt = {
+      menuNodeList : titleNodes
+    };
+
+    this.COMPS.FloatingMenuComp = new FloatingMenu(opt);
     const floatingMenuNode = this.COMPS.FloatingMenuComp.node;
 
     const connectIDs = [];
-    const articleNodes = this.node.querySelectorAll("article");
-    for(const articleNode of articleNodes){
-        connectIDs.push(articleNode.id);
-    }
+    
 
-    appendNode(this.node,floatingMenuNode);
+    // const articleNodes = this.node.querySelectorAll("article");
+    // for(const articleNode of articleNodes){
+    //     connectIDs.push(articleNode.id);
+    // }
+
+    // appendNode(this.node,floatingMenuNode);
+    
   }
 }

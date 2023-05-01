@@ -1,3 +1,4 @@
+"use strict"
 const skillsDatas = {
     mainTitle : '보유기술',
     contents : [
