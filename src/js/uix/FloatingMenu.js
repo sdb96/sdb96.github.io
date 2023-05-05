@@ -4,6 +4,7 @@ class FloatingMenu {
     this.node;
     this.floatingMenuNodes = {};
     this.onClass = "on";
+    this.floatingMenuClass = "floating-manu";
     this.currentOnNode;
 
     const defaultOpt = {
@@ -12,14 +13,15 @@ class FloatingMenu {
       position: "fixed",
       backgroundColor: "none",
       textColor: "#ffffff",
-      top: "600px",
+      top: "150px",
       bottom: "0",
-    //   left: '1570px',
-      right: "0",
+      right: "120px",
       "z-index": 999,
     };
 
     this.option = Object.assign(defaultOpt, opt);
+
+    this.bindedEvt = {}
 
     this.init();
   }
@@ -32,10 +34,15 @@ class FloatingMenu {
   }
 
   initNode() {
+    const prevFloatingNode =  document.querySelector(`.${this.floatingMenuClass}`);
+    if(checkValidate(prevFloatingNode)){
+      prevFloatingNode.remove();
+    }
+
     //nodeList -> Array
     this.node = createEl({
       tagName: "div",
-      class: "floating-manu",
+      class: this.floatingMenuClass,
     });
     appendNode(document.body, this.node);
   }
@@ -57,9 +64,7 @@ class FloatingMenu {
       });
 
       this.floatingMenuNodes[idx] = liNode;
-      this.floatingMenuNodes[idx].dataset.y 
-                        = menuNode.getBoundingClientRect().y;
-                        - MenuFactory.DefaultComp.COMPS.HEADER.el.offsetHeight;
+      this.floatingMenuNodes[idx].dataset.y = menuNode.getBoundingClientRect().y;
 
       appendNode(listNode, liNode);
     });
@@ -81,7 +86,8 @@ class FloatingMenu {
   }
 
   initScrollEvt() {
-    window.addEventListener("scroll", this.onOffEvt.bind(this));
+    this.bindedEvt.onOffEvt = this.onOffEvt.bind(this);
+    window.addEventListener("scroll", this.bindedEvt.onOffEvt);
   }
 
   initClickEvt() {
@@ -126,11 +132,13 @@ class FloatingMenu {
 
   goToMenuNode(e) {
     const targetNode = e.currentTarget;
-    console.log(targetNode.dataset.y)
     window.scrollTo({
         top : targetNode.dataset.y,
         behavior : "smooth"
     });
+  }
 
+  dispose(){
+    window.removeEventListener("scroll", this.bindedEvt.onOffEvt);
   }
 }

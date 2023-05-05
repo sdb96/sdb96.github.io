@@ -50,17 +50,9 @@ class MainMenu {
     };
 
     this.COMPS.FloatingMenuComp = new FloatingMenu(opt);
-    const floatingMenuNode = this.COMPS.FloatingMenuComp.node;
+  }
 
-    const connectIDs = [];
-    
-
-    // const articleNodes = this.node.querySelectorAll("article");
-    // for(const articleNode of articleNodes){
-    //     connectIDs.push(articleNode.id);
-    // }
-
-    // appendNode(this.node,floatingMenuNode);
-    
+  dispose(){
+    this.COMPS.FloatingMenuComp.dispose();
   }
 }

@@ -17,7 +17,7 @@ i {display: inline-block; width: 30px; height: 30px; background-repeat: no-repea
 
 /* 메뉴 공통 박스 */
 #menu-box{min-height: 100vh;}
-#header-nav{position: sticky; top:0; width: 100%;}
+#header-nav{position: sticky; top:0; width: 100%; z-index: 999;}
 
 div.circle{border-radius: 70%; overflow: hidden;}
 /* div.hexagon{} */
@@ -62,3 +62,7 @@ div.circle{border-radius: 70%; overflow: hidden;}
 .floating-manu ul{list-style : none; padding: 0.5em;}
 .floating-manu ul li { margin: 0.5em 0em; opacity: 0.5; border-left: solid 5px var(--sub-color); cursor:pointer;}
 .floating-manu ul li.on{opacity: 1;}
+
+@media screen and (max-width: 1365px) {
+    .floating-manu{ display: none;}
+}
