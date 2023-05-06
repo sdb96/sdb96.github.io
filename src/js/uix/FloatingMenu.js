@@ -64,7 +64,8 @@ class FloatingMenu {
       });
 
       this.floatingMenuNodes[idx] = liNode;
-      this.floatingMenuNodes[idx].dataset.y = menuNode.getBoundingClientRect().y;
+      this.floatingMenuNodes[idx].dataset.y = menuNode.getBoundingClientRect().y
+                                               - MenuFactory.DefaultComp.COMPS.HEADER.el.offsetHeight;
 
       appendNode(listNode, liNode);
     });

@@ -2,6 +2,8 @@
 class MenuFactory{
     constructor(){}
     
+    static DefaultComp = new DefaultComp();
+
     //메뉴영역 nav node > 메뉴의 parent node
     static menuNavEl = document.querySelector("#menu-nav");
     

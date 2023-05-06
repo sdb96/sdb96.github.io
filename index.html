@@ -77,11 +77,9 @@
         </div>
         <script>
             document.addEventListener('DOMContentLoaded',()=>{
-                new DefaultComp().init();
+                MenuFactory.DefaultComp.init();
                 MenuFactory.changeMenu(MenuFactory.TYPE.Main);
-                // const MENU = MenuFactory.getMenu(MenuFactory.TYPE.Main);
-                // window.addEventListener('popstate',History.callHistory);
-            })
+            });
         </script>
     </body>
 
