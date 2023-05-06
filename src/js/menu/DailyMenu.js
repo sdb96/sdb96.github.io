@@ -12,4 +12,8 @@ class DailyMenu{
             await this.COMPS[COMP].init(document.body);
         }
     }
+
+    dispose(){
+        
+    }
 }

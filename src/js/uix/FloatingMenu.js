@@ -141,5 +141,6 @@ class FloatingMenu {
 
   dispose(){
     window.removeEventListener("scroll", this.bindedEvt.onOffEvt);
+    this.node.remove();
   }
 }

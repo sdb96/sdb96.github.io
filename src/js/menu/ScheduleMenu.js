@@ -12,4 +12,8 @@ class ScheduleMenu{
         //     await this.COMPS[COMP].init(document.body);
         // }
     }
+
+    dispose(){
+        
+    }
 }
