@@ -11,3 +11,10 @@ async function getFragHtml(url){
     
     return createNode(fragHtml);
 }
+
+function getUrlParem(key){
+    const urlParam = new URLSearchParams(location.search);
+    if(urlParam.has(key)){
+        return urlParam.get(key);
+    }
+}

@@ -11,6 +11,10 @@
 .nav-bar__menu li {padding : 8px 12px; text-decoration: none; font-size: 16px; color: var(--text-color);}
 .nav-bar__menu li:hover {background-color: var(--sub-color); border-radius: 4px; cursor: pointer;}
 
+.nav-bar__menu a {padding : 8px 12px; text-decoration: none; font-size: 16px; color: var(--text-color);}
+.nav-bar__menu a:hover {background-color: var(--sub-color); border-radius: 4px; cursor: pointer;}
+
+
 /* SNS */
 .nav-bar.sns-box {display: flex; flex-direction: row-reverse; flex-grow: 1;}
 .nav-bar__sns {display: flex; flex-direction: row-reverse; flex-grow: 1; list-style: none; color: var(--sub-color); padding-left: 0; margin: 0;}
@@ -26,6 +30,9 @@
     #nav-bar {flex-direction: column; align-items: flex-start; padding: 8px 24px; height: auto;}
     .nav-bar__menu {display: none; flex-direction: column; align-items: center; width: 100%;}
     .nav-bar__menu li { width: 100%; text-align: center; padding: 8px 12px;}
+    
+    .nav-bar__menu a { width: 100%; text-align: center; padding: 8px 12px;}
+
     .nav-bar__sns {display:none; justify-content: center; width: 100%;}
     .nav-bar__sns.active,.nav-bar__menu.active {display: flex;}
     .nav-bar__toggle-btn {display: block;}

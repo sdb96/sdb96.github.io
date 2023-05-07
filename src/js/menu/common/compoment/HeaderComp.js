@@ -11,26 +11,14 @@ class HeaderComp{
     async init(){
         this.el = await getFragHtml(this.htmlUrl);
         appendNode(this.parentEl,this.el);
-        this.addEvent();
+        this.initEvt();
     }
 
     /* Event */
-    addEvent(){
-        //메뉴 전환
-        const menuEls = this.el.querySelectorAll("[menu]");
-        menuEls.forEach((menuEl)=>{
-            menuEl.addEventListener("click",this.changeMenuEvt);
-        });
-        
+    initEvt(){
         //화면이 작은경우 메뉴 toggle
         const menuToggleBtn = this.el.querySelector(".nav-bar__toggle-btn");
         menuToggleBtn.addEventListener('click',this.menuToggleEvt.bind(this));
-    }
-
-    changeMenuEvt(e){
-        const selectedMenuType = e.currentTarget.getAttribute("menu");
-        const menuType = MenuFactory.TYPE[selectedMenuType];
-        MenuFactory.changeMenu(menuType);
     }
 
     menuToggleEvt(){

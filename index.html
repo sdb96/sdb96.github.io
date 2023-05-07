@@ -6,8 +6,8 @@
         <meta name="viewPort" content="width=device-width, initial-scale=1.0">
         
         <!-- Font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Rubik&display=swap" rel="stylesheet">
 
         <!-- js module??-->
@@ -78,7 +78,12 @@
         <script>
             document.addEventListener('DOMContentLoaded',()=>{
                 MenuFactory.DefaultComp.init();
-                MenuFactory.changeMenu(MenuFactory.TYPE.Main);
+
+                const menuParam = getUrlParem("menu");
+                const menuType = checkValidate(menuParam)
+                                ? menuParam
+                                : MenuFactory.TYPE.Main;
+                MenuFactory.changeMenu(menuType);
             });
         </script>
     </body>

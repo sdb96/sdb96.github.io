@@ -15,12 +15,12 @@ class MenuFactory{
         Schedule:"schedule",
     });
 
-    //TYPE에 일치하는 메뉴 return
+    //TYPE에 일치하는 메뉴객체 return
     static getMenu(type){
+        this.dispose();
+        
         const types = this.TYPE;
 
-        if(checkValidate(this.MENU)){this.MENU.dispose();}
-        
         if(types.Main === type){this.MENU = new MainMenu();}
         if(types.Development === type){this.MENU = new DevelopmentMenu();}
         if(types.Schedule === type){this.MENU = new ScheduleMenu();}
@@ -28,13 +28,13 @@ class MenuFactory{
         return this.MENU;
     }
 
-    static async changeMenu(type){ 
+    static async changeMenu(type){
         const menu = this.getMenu(type);
-        this.menuNavEl.innerHTML ='';
-
-        console.log(type)
         await menu.init();
     }
 
-}
+    static dispose(){
+        if(checkValidate(this.MENU)){this.MENU.dispose();}
+    }
 
+}
