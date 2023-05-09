@@ -23,7 +23,7 @@ div.circle{border-radius: 70%; overflow: hidden;}
 /* div.hexagon{} */
 
 .flex{display: flex;}
-.half-hl{background: linear-gradient(to top, var(--sub-color), transparent 33%);}
+.half-hl{background: linear-gradient(to top, var(--sub-color), transparent 28%);}
 
 /* icons==========================================================================*/
 .i-menu {background-image: url(../icons/icon_menu.png); width: 30px; height: 30px;}
