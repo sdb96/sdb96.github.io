@@ -1,16 +1,15 @@
 
 /* letft side menu */
-#develop-left-side{width: 15em; position: absolute; z-index:10; height: 100%; overflow-y: scroll; box-shadow: 0.5px 0px 0px 0px #ccc;}
+#develop-left-side{width: 15em; height: 100%; position: fixed; overflow: scroll; background-color: #fbfbfb; box-shadow: 0.5px 0px 0px 0px #ccc;}
 #develop-left-side::-webkit-scrollbar {display: none;}
 #develop-left-side{scrollbar-width: none; /* 파이어폭스 */}
-#develop-left-side ul{padding-left: 18px;}
+/* #develop-left-side ul{padding-left: 18px;} */
 #develop-left-side li{height: 3em; cursor: pointer;}
 #develop-left-side li::marker{font-size: 10px;}
 #develop-left-side li.open{list-style-type: disclosure-open;}
 #develop-left-side li{list-style-type:disclosure-closed;}
 
-#develop-content{width: 80em; padding-left: 20em; flex-direction: column;}
-/* #develop-right-side{width: 15em;} */
+#develop-content{width: 100%; flex-direction: column; align-items: center;}
 
 /*search*/
 .search-area{justify-content: center;}
@@ -19,6 +18,6 @@
 .search-area .i-search{flex-grow: 1; cursor: pointer;}
 
 /* posting */
-#develop-posting-content{margin: 0 6em; flex-wrap: wrap;}
+#develop-posting-content{flex-wrap: wrap; margin-left: 20em;}
 .posting-item{display: flex; flex-direction: column;  width: 20rem; margin: 1em; box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;}
 .posting-item:hover{box-shadow: rgba(0, 0, 0, 0.08) 0px 12px 20px 0px; transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;}

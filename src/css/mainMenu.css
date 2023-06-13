@@ -1,6 +1,5 @@
 /* 메인 메뉴 */
 #menu-box.main-container{
-    /* margin: 0 40vh; */
     border-top: none; border-bottom: none;
     margin-left: auto; margin-right: auto;
 } 
@@ -8,7 +7,7 @@
 /* 공통 */
 article#content{display: flex; flex-direction: column;}
 article{padding-bottom: 20px;}
-#menu-nav{margin: 0em 2em;}
+#menu-nav{height: 100%;}
 
 /* 타이틀 */
 article#main-title{width: 100%; text-align: center; padding-top: 20px;}
