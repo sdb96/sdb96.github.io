@@ -1,9 +1,12 @@
 
 /* letft side menu */
-#develop-left-side{width: 15em; height: 100%; position: fixed; overflow: scroll; background-color: #fbfbfb; box-shadow: 0.5px 0px 0px 0px #ccc;}
+#develop-left-side{height: 100%; position: relative; background-color: #fbfbfb; box-shadow: 0.5px 0px 0px 0px #ccc;}
+
+
 #develop-left-side::-webkit-scrollbar {display: none;}
-#develop-left-side{scrollbar-width: none; /* 파이어폭스 */}
-/* #develop-left-side ul{padding-left: 18px;} */
+#develop-left-side{scrollbar-width: none; }
+
+#develop-left-side:first-child{width: 15em; height: 100%; position: fixed; overflow: scroll;}
 #develop-left-side li{height: 3em; cursor: pointer;}
 #develop-left-side li::marker{font-size: 10px;}
 #develop-left-side li.open{list-style-type: disclosure-open;}
@@ -19,5 +22,5 @@
 
 /* posting */
 #develop-posting-content{flex-wrap: wrap; margin-left: 20em;}
-.posting-item{display: flex; flex-direction: column;  width: 20rem; margin: 1em; box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;}
-.posting-item:hover{box-shadow: rgba(0, 0, 0, 0.08) 0px 12px 20px 0px; transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;}
+.posting-item{display: flex; flex-direction: column;  width: 20rem; height: 20em; margin: 1em; box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;}
+.posting-item:hover{cursor: pointer; box-shadow: rgba(0, 0, 0, 0.08) 0px 12px 20px 0px; transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;}
