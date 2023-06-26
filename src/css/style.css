@@ -66,6 +66,9 @@ div.circle{border-radius: 70%; overflow: hidden;}
 .i-search{background-image: url(../icons/icon_search.png);}
 
 /*End icons========================================================================*/
+/* backgound image */
+.bg_js{background-image: url(../image/bg_js.png)}
+/*End backgound image */
 
 .floating-manu ul{list-style : none; padding: 0.5em;}
 .floating-manu ul li { margin: 0.5em 0em; opacity: 0.5; border-left: solid 5px var(--sub-color); cursor:pointer;}
