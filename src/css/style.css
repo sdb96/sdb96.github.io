@@ -7,16 +7,18 @@
     --font-en:'Rubik', sans-serif;
 }
 /*tag default */
-html,body {height:100vh; font-family: "Noto Sans KR"}
+html,body {height: 100%;  margin: 0; font-family: "Noto Sans KR";}
+
+
 body {margin:0;}
 a {text-decoration: none; color: none;}
 i {display: inline-block; width: 30px; height: 30px; background-repeat: no-repeat; background-size: contain; line-height: 0; vertical-align: middle;}
 /*End tag default */
 
-#wrapper{display: flex;flex-direction: column;}
+#wrapper{display: flex; flex-direction: column;}
 
 /* 메뉴 공통 박스 */
-#menu-box{min-height: 100vh;}
+/* #menu-box{min-height: 100vh;} */
 #header-nav{position: sticky; top:0; width: 100%; z-index: 999;}
 
 /* #menu-box[menu="development"] ul{list-style: none;} */
@@ -64,6 +66,9 @@ div.circle{border-radius: 70%; overflow: hidden;}
 .i-search{background-image: url(../icons/icon_search.png);}
 
 /*End icons========================================================================*/
+/* backgound image */
+.bg_js{background-image: url(../image/bg_js.png)}
+/*End backgound image */
 
 .floating-manu ul{list-style : none; padding: 0.5em;}
 .floating-manu ul li { margin: 0.5em 0em; opacity: 0.5; border-left: solid 5px var(--sub-color); cursor:pointer;}
