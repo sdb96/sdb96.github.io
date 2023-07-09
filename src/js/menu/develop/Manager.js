@@ -5,11 +5,20 @@ class DevelopmentManager{
     }
 
     search(keyword){
-        const searchedData = this.Store.getPostingData(keyword);
+        const searchedPostingData = this.Store.getPostingData(keyword);
+        this.displayPostingDataList(searchedPostingData);
+    }
+    
+    displayPostingDataList(postingDataList){
+        // parentNode -> div#develop-content
+        //append posting
+    }
 
+    getPostingItem(postingData){
+        return new PostingItem(postingData);
     }
 
     goToPosting(postingID){
-        
+
     }
 }
