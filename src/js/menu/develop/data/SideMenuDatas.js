@@ -1,4 +1,4 @@
-[
+const sideMenuDatas = [
     {
         title:"JS",
         sub:[

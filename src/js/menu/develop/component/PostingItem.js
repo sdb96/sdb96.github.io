@@ -1,21 +1,15 @@
 class PostingItem{
     
-    constructor(opt){
-        this.title = opt.title;
-        this.content = opt.content;
-        this.imageSrc = opt.imageSrc;
-        this.postingID  = opt.postingID;
-
-        this.el = createEl(
-            {
-                text:`<div class="posting-item">
-                            <div></div>
-                            <div></div>
-                        </div>`,
-            }
-        );
-
+    constructor(postingData){
+       this.el = createNode(
+            `<div class="posting-item">
+                ${postingData.imgHtml}
+                <div class="posting-item-content"></div>
+                <h4 class="posting-item-title">${postingData.title}</h4>
+                <p class ="posting-item-text">
+                    ${postingData.text}
+                </p>
+            </div>`
+       );
     }
-
-
 }

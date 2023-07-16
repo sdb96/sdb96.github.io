@@ -3,12 +3,11 @@
 class MainMenu {
   constructor() {
     this.COMPS = {};
-    this.node;
+    this.el;
   }
 
   async init() {
     await this.initComps();
-
     this.initFloatingMenu();
   }
 
@@ -26,16 +25,16 @@ class MainMenu {
       await comps.MainMenuComp.init();
 
       //append els
-      this.node = document.querySelector("#menu-nav");
-      appendNode(this.node, comps.MainMenuComp.el);
+      this.el = document.querySelector("#menu-nav");
+      appendNode(this.el, comps.MainMenuComp.el);
 
-      const introduceNode = this.node.querySelector("#introduce");
+      const introduceNode = this.el.querySelector("#introduce");
       await comps.IntroduceComp.init(introduceNode);
 
-      const skillsNode = this.node.querySelector("#skills");
+      const skillsNode = this.el.querySelector("#skills");
       await comps.SkillsComp.init(skillsNode);
 
-      const ExperienceNode = this.node.querySelector("#experience");
+      const ExperienceNode = this.el.querySelector("#experience");
       await comps.ExperienceComp.init(ExperienceNode);
 
       resolve(true);

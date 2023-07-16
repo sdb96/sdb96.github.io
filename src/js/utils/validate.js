@@ -5,10 +5,11 @@ function checkValidate(data){
 
 
     // 특정 데이터 타입에 대해서 조건추가
-    if(data instanceof String){data.trim() === '' ? false : true;}
-    if(data instanceof Number){Number.isNaN === data ? false : true;}
-    if(data instanceof Object){Object.keys(data).length > 0 ? false : true;}
-    if(data instanceof Array){data.length > 0 ? false : true;}
+    if(data instanceof String){return data.trim() !== ''}
+    if(data instanceof Number){return Number.isNaN !== data}
+    if(data instanceof Array){return data.length > 0}
+    if(data instanceof Node){return true;}
+    if(data instanceof Object){return Object.keys(data).length > 0;}
 
     // 빈 값이 아니라면 true
     if(data !== undefined || data !== null){return true;}
